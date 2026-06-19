@@ -76,8 +76,49 @@
         <div class="header-actions">
           <button type="button" class="header-btn">تسجيل مجاني</button>
         </div>
+        <button
+          class="hamburger-btn"
+          id="hamburgerBtn"
+          aria-label="القائمة"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-menu-drawer">
+    <ul class="mobile-utility-links">
+      <li>
+        <button class="theme-btn" id="themeToggleMobile">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </li>
+      <li><a href="/support">الدعم الفني</a></li>
+      <li><a href="/signup">تسجيل الدخول</a></li>
+      <li>
+        <select class="lang-selector" name="language" aria-label="اختر اللغة">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+        </select>
+      </li>
+    </ul>
+    <hr class="mobile-divider">
+    <ul class="mobile-nav-links">
+      <li><a href="#">الرئيسية</a></li>
+      <li><a href="#">Pc Builder</a></li>
+      <li><a href="#">Bottleneck</a></li>
+      <li><a href="#">Upgrade Path</a></li>
+      <li><a href="#">FPS Predictor</a></li>
+      <li><a href="#">Future Proof</a></li>
+      <li><a href="#">Compare Builds</a></li>
+    </ul>
+    <button type="button" class="header-btn mobile-cta">تسجيل مجاني</button>
+  </nav>
+</div>
     <section class="hero">
       <div class="container hero-container">
         <div class="hero-content">

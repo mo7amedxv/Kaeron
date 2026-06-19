@@ -81,7 +81,6 @@ li {
 body {
   background: var(--bg);
   direction: rtl;
-  color: text;
   font-family: var(--font-main);
   color: var(--text);
 }
@@ -358,13 +357,17 @@ body.menu-open {
   .hamburger-btn {
     display: flex;
   }
-  .hero-heading, .hero-desc{
+  .hero-heading,
+  .hero-desc {
     text-align: center;
   }
+  header {
+    padding-block: var(--space-lg) ;
+  }
 }
-@media (max-width: 450px){
-  .hero-btn{
+@media (max-width: 450px) {
+  .hero-btn {
     width: 100%;
     margin-block: var(--space-sm);
   }
-} 
+}

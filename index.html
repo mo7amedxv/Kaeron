@@ -36,15 +36,35 @@
   </head>
   <body>
     <header>
+      <nav class="utility-nav">
+        <div class="container">
+          <ul class="utility-links">
+            <li>
+              <button id="themeToggle" class="theme-btn">
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </li>
+            <li><a class="utility-link" href="/support">الدعم الفني</a></li>
+            <li><a class="utility-link" href="/signup">تسجيل الدخول</a></li>
+            <li>
+              <select
+                class="lang-selector"
+                name="language"
+                aria-label="اختر اللغة"
+              >
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div class="container header-container">
         <a href="#" class="logo">
-          <span class="name">Kaeron</span>
+          <span class="name">elKaeron</span>
           PcBenchPro</a
         >
         <ul class="header-links">
-          <button id="themeToggle" class="theme-btn">
-            <i class="fa-solid fa-moon"></i>
-          </button>
           <li><a class="header-link" href="#">الرئيسية</a></li>
           <li><a class="header-link" href="#">Pc Builder</a></li>
           <li><a class="header-link" href="#">Bottleneck</a></li>
@@ -52,12 +72,10 @@
           <li><a class="header-link" href="#">FPS Predictor</a></li>
           <li><a class="header-link" href="#">Future Proof</a></li>
           <li><a class="header-link" href="#">Compare Builds</a></li>
-          <select id="languages" class="language-selector">
-            <option value="Arabic">Arabic</option>
-            <option value="Englizy">English</option>
-          </select>
         </ul>
-        <button type="button" class="header-btn">تسجيل مجاني</button>
+        <div class="header-actions">
+          <button type="button" class="header-btn">تسجيل مجاني</button>
+        </div>
       </div>
     </header>
     <section class="hero">

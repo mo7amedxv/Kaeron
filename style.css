@@ -1,20 +1,20 @@
 :root {
-  --bg: #0a0a0f;
-  --bg2: #111118;
-  --bg3: #1a1a26;
-  --bg4: #22222f;
-  --accent: #6c5ce7;
-  --accent2: #a29bfe;
-  --accent3: #00cec9;
-  --text: #f0f0f5;
-  --text2: #a0a0b0;
-  --text3: #606070;
-  --border: #2a2a3a;
-  --border2: #3a3a50;
-  --red: #e74c3c;
-  --green: #00b894;
-  --amber: #fdcb6e;
-  --card-bg: #13131e;
+  --bg: #080808;
+  --bg2: #111111;
+  --bg3: #1c1c1c;
+  --bg4: #242424;
+  --accent: #9c9c9c;
+  --accent2: #c8c8c8;
+  --accent3: #e8e8e8;
+  --text: #f2f2f2;
+  --text2: #a0a0a0;
+  --text3: #606060;
+  --border: #2c2c2c;
+  --border2: #3c3c3c;
+  --red: #888888;
+  --green: #b0b0b0;
+  --amber: #999999;
+  --card-bg: #141414;
   --font-main: "Inter", system-ui, -apple-system, sans-serif;
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -23,7 +23,7 @@
   --font-xs: 0.75rem;
   --font-sm: 0.875rem;
   --font-base: 1rem;
-  --font-md: 1.15rem;
+  --font-md: 1.25rem;
   --font-lg: 1.563rem;
   --font-xl: 1.953rem;
   --font-2xl: 2.441rem;
@@ -42,24 +42,27 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.75;
   --main-transtion: 0.3s;
+  --btn-text-color: #111111;
 }
+
 .light-mode {
   --bg: #ffffff;
-  --bg2: #f7f8fa;
-  --bg3: #eef0f5;
-  --bg4: #e5e8f0;
-  --accent: #6c5ce7;
-  --accent2: #8b7cf7;
-  --accent3: #00cec9;
-  --text: #111827;
-  --text2: #4b5563;
-  --text3: #9ca3af;
-  --border: #e5e7eb;
-  --border2: #d1d5db;
-  --red: #ef4444;
-  --green: #10b981;
-  --amber: #f59e0b;
+  --bg2: #f5f5f5;
+  --bg3: #ebebeb;
+  --bg4: #e0e0e0;
+  --accent: #3a3a3a;
+  --accent2: #5a5a5a;
+  --accent3: #7a7a7a;
+  --text: #111111;
+  --text2: #4a4a4a;
+  --text3: #9a9a9a;
+  --border: #e2e2e2;
+  --border2: #d0d0d0;
+  --red: #444444;
+  --green: #777777;
+  --amber: #555555;
   --card-bg: #ffffff;
+  --btn-text-color: #f5f5f5;
 }
 * {
   margin: 0;
@@ -69,6 +72,11 @@
 a {
   color: var(--text2);
   text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+li {
+  list-style: none;
 }
 body {
   background: var(--bg);
@@ -83,11 +91,9 @@ body {
   padding-inline: var(--space-lg);
 }
 header {
-  padding-block: var(--space-lg);
+  padding-block: var(--space-sm) var(--space-lg);
 }
-.header-links li {
-  list-style: none;
-}
+
 .header-container,
 .header-links {
   display: flex;
@@ -97,6 +103,11 @@ header {
 button {
   font-family: inherit;
   border: none;
+  cursor: pointer;
+font-weight:var(--weight-med);
+}
+select {
+  cursor: pointer;
 }
 .logo {
   color: var(--text);
@@ -115,6 +126,8 @@ button {
 }
 .header-link:hover {
   color: var(--text);
+  background-color: var(--bg4);
+  border-radius: var(--radius-md);
 }
 .header-link:not(.logo) {
   padding: var(--space-sm);
@@ -122,22 +135,21 @@ button {
 .header-btn {
   padding: var(--space-sm) var(--space-md);
   background-color: var(--accent);
-  color: white;
+  color: var(--btn-text-color);
   border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  transition: var(--main-transtion);
+}
+.header-btn:hover {
+  background-color: var(--accent2);
 }
 .theme-btn {
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
-  background-color: var(--accent);
+  background-color: var(--bg4);
   color: var(--text);
 }
-.language-selector {
-  background-color: var(--bg4);
-  color: var(--text2);
-  padding: var(--space-sm);
-  border: none;
-  font-family: inherit;
-}
+
 .hero {
   height: calc(80vh - 111px);
 }
@@ -161,7 +173,7 @@ button {
 }
 .hero-btn {
   padding: var(--space-md) var(--space-lg);
-  color: var(--text);
+  color: var(--btn-text-color);
   background-color: var(--accent);
   border-radius: var(--radius-md);
   font-size: var(--font-base);
@@ -181,4 +193,24 @@ button {
 }
 .btn-secondary {
   background-color: var(--bg4);
+  color: var(--text);
+}
+.utility-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+.utility-link {
+  font-size: var(--font-xs);
+}
+.utility-link:hover {
+  text-decoration: underline;
+}
+.lang-selector {
+  background-color: var(--bg4);
+  color: var(--text2);
+  padding: var(--space-xs) var(--space-sm);
+  border: none;
+  font-family: inherit;
 }

@@ -358,4 +358,13 @@ body.menu-open {
   .hamburger-btn {
     display: flex;
   }
+  .hero-heading, .hero-desc{
+    text-align: center;
+  }
 }
+@media (max-width: 450px){
+  .hero-btn{
+    width: 100%;
+    margin-block: var(--space-sm);
+  }
+} 

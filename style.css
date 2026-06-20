@@ -1,8 +1,14 @@
 :root {
+  --primary-color: #3d80e8;
+  --primary-color2: #5e97f5;
+  --primary-color3: #8ab5ff;
+  --primary-color-bg: #0d1e42;
+  --primary-color-border: #1c3c78;
   --bg: #080808;
   --bg2: #111111;
   --bg3: #1c1c1c;
   --bg4: #242424;
+  --bg5: #2e2e2e;
   --accent: #9c9c9c;
   --accent2: #c8c8c8;
   --accent3: #e8e8e8;
@@ -20,21 +26,21 @@
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-full: 9999px;
-  --font-xs: 0.75rem;
-  --font-sm: 0.875rem;
-  --font-base: 1rem;
-  --font-md: 1.25rem;
-  --font-lg: 1.563rem;
-  --font-xl: 1.953rem;
-  --font-2xl: 2.441rem;
-  --font-3xl: 3.052rem;
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
+  --font-xs: clamp(0.7rem, 0.68rem + 0.08vw, 0.75rem);
+  --font-sm: clamp(0.8rem, 0.78rem + 0.13vw, 0.875rem);
+  --font-base: clamp(0.9rem, 0.87rem + 0.17vw, 1rem);
+  --font-md: clamp(1.05rem, 0.98rem + 0.33vw, 1.25rem);
+  --font-lg: clamp(1.25rem, 1.15rem + 0.52vw, 1.563rem);
+  --font-xl: clamp(1.5rem, 1.35rem + 0.76vw, 1.953rem);
+  --font-2xl: clamp(1.75rem, 1.52rem + 1.15vw, 2.441rem);
+  --font-3xl: clamp(2.25rem, 1.98rem + 1.34vw, 3.052rem);
+  --space-xs: clamp(0.2rem, 0.18rem + 0.08vw, 0.25rem);
+  --space-sm: clamp(0.4rem, 0.37rem + 0.17vw, 0.5rem);
+  --space-md: clamp(0.75rem, 0.67rem + 0.42vw, 1rem);
+  --space-lg: clamp(1rem, 0.83rem + 0.83vw, 1.5rem);
+  --space-xl: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  --space-2xl: clamp(1.75rem, 1.33rem + 2.08vw, 3rem);
+  --space-3xl: clamp(2.25rem, 1.67rem + 2.92vw, 4rem);
   --weight-med: 500;
   --weight-semi: 600;
   --weight-bold: 700;
@@ -42,14 +48,20 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.75;
   --main-transtion: 0.3s;
-  --btn-text-color: #111111;
+  --btn-text-color: #f2f2f2;
 }
 
 .light-mode {
+  --primary-color: #2060d8;
+  --primary-color2: #3d7aee;
+  --primary-color3: #609af5;
+  --primary-color-bg: #ebf3ff;
+  --primary-color-border: #b8d4f8;
   --bg: #ffffff;
   --bg2: #f5f5f5;
   --bg3: #ebebeb;
   --bg4: #e0e0e0;
+  --bg5: #d4d4d4;
   --accent: #3a3a3a;
   --accent2: #5a5a5a;
   --accent3: #7a7a7a;
@@ -62,7 +74,7 @@
   --green: #777777;
   --amber: #555555;
   --card-bg: #ffffff;
-  --btn-text-color: #f5f5f5;
+  --btn-text-color: #f2f2f2;
 }
 * {
   margin: 0;
@@ -116,31 +128,33 @@ select {
   font-size: var(--font-xl);
   display: block;
   font-weight: var(--weight-med);
-  color: var(--accent2);
+  color: var(--primary-color);
 }
 .header-link {
   font-size: var(--font-sm);
   text-align: center;
-  transition: var(--main-transtion);
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--main-transtion),
+    color var(--main-transtion);
 }
 .header-link:hover {
   color: var(--text);
   background-color: var(--bg4);
-  border-radius: var(--radius-md);
 }
 .header-link:not(.logo) {
   padding: var(--space-sm);
 }
 .header-btn {
   padding: var(--space-sm) var(--space-md);
-  background-color: var(--accent);
+  background-color: var(--primary-color);
   color: var(--btn-text-color);
   border-radius: var(--radius-md);
   font-size: var(--font-base);
-  transition: var(--main-transtion);
+  transition: background-color var(--main-transtion);
 }
 .header-btn:hover {
-  background-color: var(--accent2);
+  background-color: var(--primary-color2);
 }
 .theme-btn {
   padding: var(--space-xs) var(--space-sm);
@@ -163,36 +177,40 @@ select {
 .hero-heading {
   font-size: var(--font-3xl);
   display: block;
+  text-align: center;
   margin-bottom: var(--space-md);
 }
 .hero-desc {
   margin-bottom: var(--space-lg);
+  text-align: center;
   font-size: var(--font-md);
   color: var(--text2);
 }
 .hero-btn {
   padding: var(--space-md) var(--space-lg);
   color: var(--btn-text-color);
-  background-color: var(--accent);
+  background-color: var(--primary-color);
   border-radius: var(--radius-md);
   font-size: var(--font-base);
-  transition: var(--main-transtion);
+  transition: background-color var(--main-transtion);
 }
 .hero-btn i {
-  transition: var(--main-transtion);
+  transition: transform var(--main-transtion);
 }
 .btn-primary:hover .arrow i {
   transform: translateX(-5px);
 }
 .btn-primary:hover {
-  background-color: var(--accent2);
+  background-color: var(--primary-color2);
+}
+
+.btn-secondary {
+  background-color: var(--bg3);
+  color: var(--text);
+  transition: background-color var(--main-transtion);
 }
 .btn-secondary:hover {
-  box-shadow: 0 0 1px 1.5px var(--text2);
-}
-.btn-secondary {
   background-color: var(--bg4);
-  color: var(--text);
 }
 .utility-links {
   display: flex;
@@ -346,7 +364,7 @@ select {
 body.menu-open {
   overflow: hidden;
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .header-links,
   .header-actions {
     display: none;
@@ -362,7 +380,7 @@ body.menu-open {
     text-align: center;
   }
   header {
-    padding-block: var(--space-lg) ;
+    padding-block: var(--space-lg);
   }
 }
 @media (max-width: 450px) {

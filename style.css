@@ -367,7 +367,7 @@ select {
 body.menu-open {
   overflow: hidden;
 }
-@media (max-width: 920px) {
+@media (max-width: 1000px) {
   .header-links,
   .header-actions {
     display: none;

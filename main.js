@@ -1,4 +1,4 @@
-const themeButtons = document.querySelectorAll(".theme-btn"); 
+const themeButtons = document.querySelectorAll(".theme-btn");
 
 function applyTheme(isLight) {
   document.body.classList.toggle("light-mode", isLight);
@@ -19,8 +19,8 @@ themeButtons.forEach((btn) => {
   });
 });
 const hamburgerBtn = document.getElementById("hamburgerBtn");
-const mobileMenu   = document.getElementById("mobileMenu");
-const menuOverlay  = document.getElementById("menuOverlay");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuOverlay = document.getElementById("menuOverlay");
 
 function toggleMenu(open) {
   mobileMenu.classList.toggle("active", open);

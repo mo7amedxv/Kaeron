@@ -123,7 +123,7 @@ select {
   cursor: pointer;
 }
 .logo {
-  color: var(--text);
+  color: var(--text2);
   font-size: var(--font-md);
 }
 .logo .name {
@@ -167,7 +167,7 @@ select {
 }
 
 .hero {
-  height: calc(80vh - 111px);
+  height: calc(80vh - 80px);
 }
 .hero-container,
 .hero,
@@ -391,4 +391,28 @@ body.menu-open {
     width: 100%;
     margin-block: var(--space-sm);
   }
+}
+/***** STATS *****/
+.stats-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 120px;
+  background-color: var(--bg2);
+  border-radius: var(--radius-md);
+}
+.stat-desc {
+  color: var(--text2);
+  font-size: var(--font-sm);
+}
+.stat-heading{
+  color: var(--text);
+  font-size: var(--font-lg);
+  margin-block: var(--space-sm);
 }

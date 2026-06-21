@@ -94,3 +94,4 @@ featuresData.forEach((feature) => {
 
   featuresContainer.appendChild(card);
 });
+document.getElementById("currentYear").textContent = new Date().getFullYear();

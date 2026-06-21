@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,7 @@
     />
     <meta
       property="og:image"
-      content="https://www.yourwebsite.com/images/og-image.jpg"
+      content="https://mo7amedxv.github.io/Kaeron/images/og-image.jpg"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <meta property="og:url" content="https://www.yourwebsite.com" />
+    <meta property="og:url" content="https://mo7amedxv.github.io/Kaeron/" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="style.css" />
     <title>Kearon Pc Build</title>
@@ -40,12 +40,16 @@
         <div class="container">
           <ul class="utility-links">
             <li>
-              <button id="themeToggle" class="theme-btn">
+              <button
+                id="themeToggle"
+                class="theme-btn"
+                aria-label="تبديل المظهر"
+              >
                 <i class="fa-solid fa-moon"></i>
               </button>
             </li>
-            <li><a class="utility-link" href="/support">الدعم الفني</a></li>
-            <li><a class="utility-link" href="/signup">تسجيل الدخول</a></li>
+            <li><a class="utility-link" href="support/">الدعم الفني</a></li>
+            <li><a class="utility-link" href="signup/">تسجيل الدخول</a></li>
             <li>
               <select
                 class="lang-selector"
@@ -93,12 +97,16 @@
       <nav class="mobile-menu-drawer">
         <ul class="mobile-utility-links">
           <li>
-            <button class="theme-btn" id="themeToggleMobile">
+            <button
+              class="theme-btn"
+              id="themeToggleMobile"
+              aria-label="تبديل المظهر"
+            >
               <i class="fa-solid fa-moon"></i>
             </button>
           </li>
-          <li><a href="/support">الدعم الفني</a></li>
-          <li><a href="/signup">تسجيل الدخول</a></li>
+          <li><a href="support/">الدعم الفني</a></li>
+          <li><a href="signup/">تسجيل الدخول</a></li>
           <li>
             <select
               class="lang-selector"
@@ -174,6 +182,75 @@
         <div id="features-container" class="features-grid"></div>
       </div>
     </section>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <span class="name">elKaeron</span>
+              PcBenchPro</a
+            >
+            <p class="footer-desc">
+              منصتك الشاملة لتجميع وفحص وتطوير أجهزة الكمبيوتر، بمعايير دقيقة
+              وبيانات حقيقية.
+            </p>
+            <ul class="footer-social">
+              <li>
+                <a target="_blank" href="#" aria-label="فيسبوك"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="#" aria-label="إكس"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.youtube.com/@kaeron-737" aria-label="يوتيوب"
+                  ><i class="fa-brands fa-youtube"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="https://discord.gg/J9uQvRkrba" aria-label="ديسكورد"
+                  ><i class="fa-brands fa-discord"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-links-group">
+            <h4 class="footer-heading">الأدوات</h4>
+            <ul class="footer-links">
+              <li><a href="#">مجمّع الجهاز</a></li>
+              <li><a href="#">فحص الاختناق</a></li>
+              <li><a href="#">خطة الترقية</a></li>
+              <li><a href="#">توقع الأداء</a></li>
+              <li><a href="#">جهوزية المستقبل</a></li>
+              <li><a href="#">مقارنة التجميعات</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-group">
+            <h4 class="footer-heading">الشركة</h4>
+            <ul class="footer-links">
+              <li><a href="support/">الدعم الفني</a></li>
+              <li><a href="signup/">تسجيل الدخول</a></li>
+              <li><a href="#">سياسة الخصوصية</a></li>
+              <li><a href="#">الشروط والأحكام</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+        <hr class="footer-divider" />
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            © <span id="currentYear"></span> elKaeron PcBenchPro. جميع الحقوق
+            محفوظة.
+          </p>
+        </div>
+      </div>
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>

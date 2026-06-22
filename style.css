@@ -21,7 +21,7 @@
   --green: #b0b0b0;
   --amber: #999999;
   --card-bg: #141414;
-  --font-main: "Tajawal", system-ui, -apple-system, sans-serif;
+  --font-main: "Cairo", system-ui, -apple-system, sans-serif;
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
@@ -91,7 +91,9 @@ a {
   text-decoration: none;
   display: block;
   cursor: pointer;
+  width: fit-content;
 }
+
 li {
   list-style: none;
 }
@@ -134,6 +136,7 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+
 button {
   font-family: inherit;
   border: none;
@@ -176,17 +179,13 @@ select {
   width: 34px;
   height: 34px;
   border-radius: var(--radius-sm);
-  background-color: var(--bg5);
+  background-color: transparent;
   color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.theme-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .theme-btn .icon-light {
   display: none;
 }
@@ -270,16 +269,6 @@ body.light-mode .hero {
   background-color: var(--bg3);
   color: var(--text);
   transition: background-color var(--main-transtion);
-}
-
-.utility-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-}
-.utility-link {
-  font-size: var(--font-xs);
 }
 
 .lang-selector {
@@ -423,12 +412,9 @@ body.light-mode .hero {
 body.menu-open {
   overflow: hidden;
 }
-@media (max-width: 1010px) {
+@media (max-width: 900px) {
   .header-links,
   .header-actions {
-    display: none;
-  }
-  .utility-nav {
     display: none;
   }
   .hamburger-btn {
@@ -484,36 +470,43 @@ body.menu-open {
   font-size: var(--font-lg);
   margin-block: var(--space-sm);
 }
+:focus-visible {
+  outline: 1px dashed var(--text);
+}
+
 @media (hover: hover) {
-  .header-link:hover {
+  .header-link:hover,
+  .header-link:focus-visible {
     color: var(--text);
   }
   .header-btn:hover,
-  .theme-btn:hover {
+  .header-btn:focus-visible,
+  .theme-btn:hover,
+  .theme-btn:focus-visible {
     background-color: var(--bg4);
   }
-  .btn-primary:hover {
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
     background-color: var(--primary-color2);
   }
-  .btn-secondary:hover {
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
     background-color: var(--bg4);
   }
-  .utility-link:hover {
-    text-decoration: underline;
-  }
-  .mobile-utility-links a:hover {
-    opacity: 1;
-  }
-  .mobile-nav-links a:hover {
+  .mobile-nav-links a:hover,
+  .mobile-nav-links a:focus-visible {
     background: rgba(128, 128, 128, 0.1);
   }
-  .btn-primary:hover .arrow i {
+  .btn-primary:hover .arrow i,
+  .btn-primary:focus-visible .arrow i {
     transform: translateX(-5px);
   }
-  .footer-links a:hover {
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
     text-decoration: underline;
   }
-  .footer-social a:hover {
+  .footer-social a:hover,
+  .footer-social a:focus-visible {
     background-color: var(--bg5);
   }
 }
@@ -608,6 +601,7 @@ body.menu-open {
   font-size: var(--font-base);
   font-weight: var(--weight-semi);
   color: var(--text);
+  padding: var(--space-xs);
   margin-bottom: var(--space-md);
 }
 
@@ -624,6 +618,7 @@ body.menu-open {
   color: var(--text2);
   font-size: var(--font-sm);
   text-decoration: none;
+  padding: var(--space-xs);
 }
 
 .footer-divider {
@@ -648,4 +643,3 @@ body.menu-open {
     gap: var(--space-xl);
   }
 }
-

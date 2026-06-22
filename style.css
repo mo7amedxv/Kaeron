@@ -84,6 +84,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 a {
   color: var(--text2);
@@ -145,6 +146,7 @@ select {
 .logo {
   color: var(--text2);
   font-size: var(--font-sm);
+  line-height: var(--leading-small);
 }
 .logo .name {
   font-size: var(--font-lg);
@@ -534,7 +536,7 @@ body.menu-open {
 }
 .card i,
 .why-us-number {
-  font-size: var(--font-md);
+  font-size: var(--font-sm);
   background-color: var(--bg3);
   border-radius: var(--radius-md);
   padding: var(--space-md);
@@ -570,8 +572,6 @@ body.menu-open {
 }
 
 .footer-brand .logo {
-  display: inline-block;
-  font-size: var(--font-md);
   margin-bottom: var(--space-md);
 }
 
@@ -648,3 +648,4 @@ body.menu-open {
     gap: var(--space-xl);
   }
 }
+

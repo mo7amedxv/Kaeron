@@ -10,14 +10,17 @@
     <meta
       name="description"
       content="اكتشف كل ما يخص عالم الكمبيوتر في PcBench Builder. مراجعات لأحدث قطع الهاردوير، تجميعات كمبيوتر للألعاب والعمل، شروحات صيانة، وحلول لأشهر مشاكل التشغيل والويندوز."
+      data-i18n-content="meta.description"
     />
     <meta
       property="og:title"
-      content="Kearon | دليلك الشامل لعالم الكمبيوتر والتقنية"
+      content="elkaeron | دليلك الشامل لعالم الكمبيوتر والتقنية"
+      data-i18n-content="og.title"
     />
     <meta
       property="og:description"
       content="مراجعات هاردوير، تجميعات كمبيوتر، وشروحات صيانة مبسطة تناسب المبتدئين والمحترفين."
+      data-i18n-content="og.description"
     />
     <link rel="canonical" href="https://mo7amedxv.github.io/elkaeron/" />
     <meta
@@ -27,45 +30,73 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <meta property="og:url" content="https://mo7amedxv.github.io/elkaeron/" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="style.css" />
-    <title>Kearon Pc Build</title>
+    <title data-i18n="site.title">elkaeron</title>
   </head>
   <body>
     <header>
       <div class="container header-container">
         <a href="#" class="logo">
           <span class="name">elKaeron</span>
-          PcBenchPro</a
-        >
+          <span data-i18n="brand.sub">PcBenchPro</span>
+        </a>
+
         <ul class="header-links">
-          <li><a class="header-link" href="#">مجمّع الجهاز</a></li>
-          <li><a class="header-link" href="#">فحص الاختناق</a></li>
-          <li><a class="header-link" href="#">خطة الترقية</a></li>
-          <li><a class="header-link" href="#">توقع الأداء</a></li>
-          <li><a class="header-link" href="#">جهوزية المستقبل</a></li>
-          <li><a class="header-link" href="#">مقارنة التجميعات</a></li>
+          <li>
+            <a class="header-link" href="#" data-i18n="nav.builder"
+              >مجمّع الجهاز</a
+            >
+          </li>
+          <li>
+            <a class="header-link" href="#" data-i18n="nav.bottleneck"
+              >فحص الاختناق</a
+            >
+          </li>
+          <li>
+            <a class="header-link" href="#" data-i18n="nav.upgradePlan"
+              >خطة الترقية</a
+            >
+          </li>
+          <li>
+            <a class="header-link" href="#" data-i18n="nav.performanceForecast"
+              >توقع الأداء</a
+            >
+          </li>
+          <li>
+            <a class="header-link" href="#" data-i18n="nav.futureReady"
+              >جهوزية المستقبل</a
+            >
+          </li>
+          <li>
+            <a class="header-link" href="#" data-i18n="nav.compare"
+              >مقارنة التجميعات</a
+            >
+          </li>
           <li>
             <select
               class="lang-selector"
               name="language"
               aria-label="اختر اللغة"
+              data-i18n-aria-label="lang.select"
             >
-              <option value="ar">العربية</option>
-              <option value="en">English</option>
+              <option value="ar" data-i18n="lang.ar">العربية</option>
+              <option value="en" data-i18n="lang.en">English</option>
             </select>
           </li>
         </ul>
+
         <div class="header-actions">
           <li>
             <button
               id="themeToggle"
               class="theme-btn"
               aria-label="تبديل المظهر"
+              data-i18n-aria-label="theme.toggle"
             >
               <svg
                 class="icon-dark"
@@ -93,13 +124,17 @@
               </svg>
             </button>
           </li>
-          <button type="button" class="header-btn">دخول / تسجيل</button>
+          <button type="button" class="header-btn" data-i18n="auth.login">
+            دخول / تسجيل
+          </button>
         </div>
+
         <button
           class="hamburger-btn"
           id="hamburgerBtn"
           aria-label="القائمة"
           aria-expanded="false"
+          data-i18n-aria-label="nav.menu"
         >
           <span></span>
           <span></span>
@@ -107,6 +142,7 @@
         </button>
       </div>
     </header>
+
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
       <div class="mobile-menu-overlay" id="menuOverlay"></div>
       <nav class="mobile-menu-drawer">
@@ -116,6 +152,7 @@
               id="themeToggle"
               class="theme-btn"
               aria-label="تبديل المظهر"
+              data-i18n-aria-label="theme.toggle"
             >
               <svg
                 class="icon-dark"
@@ -148,159 +185,222 @@
               class="lang-selector"
               name="language"
               aria-label="اختر اللغة"
+              data-i18n-aria-label="lang.select"
             >
-              <option value="ar">العربية</option>
-              <option value="en">English</option>
+              <option value="ar" data-i18n="lang.ar">العربية</option>
+              <option value="en" data-i18n="lang.en">English</option>
             </select>
           </li>
         </ul>
+
         <hr class="mobile-divider" />
+
         <ul class="mobile-nav-links">
-          <li><a href="#">مجمّع الجهاز</a></li>
-          <li><a href="#">فحص الاختناق</a></li>
-          <li><a href="#">خطة الترقية</a></li>
-          <li><a href="#">توقع الأداء</a></li>
-          <li><a href="#">جهوزية المستقبل</a></li>
-          <li><a href="#">مقارنة التجميعات</a></li>
+          <li><a href="#" data-i18n="nav.builder">مجمّع الجهاز</a></li>
+          <li><a href="#" data-i18n="nav.bottleneck">فحص الاختناق</a></li>
+          <li><a href="#" data-i18n="nav.upgradePlan">خطة الترقية</a></li>
+          <li>
+            <a href="#" data-i18n="nav.performanceForecast">توقع الأداء</a>
+          </li>
+          <li><a href="#" data-i18n="nav.futureReady">جهوزية المستقبل</a></li>
+          <li><a href="#" data-i18n="nav.compare">مقارنة التجميعات</a></li>
         </ul>
-        <button type="button" class="header-btn mobile-cta">
+
+        <button
+          type="button"
+          class="header-btn mobile-cta"
+          data-i18n="auth.login"
+        >
           دخول / تسجيل
         </button>
       </nav>
     </div>
+
     <section class="hero">
       <div class="container hero-container">
         <div class="hero-content">
-          <h1 class="hero-heading">كل ما تحتاجه لجهازك في مكان واحد</h1>
-          <p class="hero-desc">
+          <h1 class="hero-heading" data-i18n="hero.title">
+            كل ما تحتاجه لجهازك في مكان واحد
+          </h1>
+
+          <p class="hero-desc" data-i18n="hero.desc">
             المنصة العالمية لمحترفي وهواة PC بناء التجميعات، فحص التوافق، تحليل
             الأداء الحقيقي، توقع الـ FPS، كل شيء في مكان واحد،
           </p>
+
           <div class="hero-btns">
-            <button type="button" class="hero-btn btn-primary">
+            <button
+              type="button"
+              class="hero-btn btn-primary"
+              data-i18n="hero.ctaPrimary"
+            >
               ابدأ تجميعتك
               <span class="arrow">
                 <i class="fa-solid fa-arrow-left"></i>
               </span>
             </button>
-            <button type="button" class="hero-btn btn-secondary">
+            <button
+              type="button"
+              class="hero-btn btn-secondary"
+              data-i18n="hero.ctaSecondary"
+            >
               جرب الـمساعد الذكي
             </button>
           </div>
         </div>
 
-          <div class="benchmark-card">
-            <div class="card-header">
-              <span class="live-indicator"
-                ><span class="live-dot"></span>تحليل حي</span
+        <div class="benchmark-card">
+          <div class="card-header">
+            <span class="live-indicator" data-i18n="bench.live">
+              <span class="live-dot"></span>تحليل حي
+            </span>
+            <span class="benchmark-card-title" data-i18n="bench.title"
+              >Live Benchmark</span
+            >
+          </div>
+
+          <div class="bx-stats-grid">
+            <div class="bx-stat-box">
+              <div class="bx-stat-meta">
+                <span class="bx-stat-label" data-i18n="bench.gpuLabel"
+                  >GPU</span
+                >
+                <span class="bx-stat-name" id="gpuName">RTX 4080 Super</span>
+              </div>
+              <div class="bx-stat-value" id="gpuValue">34,811</div>
+            </div>
+            <div class="bx-stat-box">
+              <div class="bx-stat-meta">
+                <span class="bx-stat-label" data-i18n="bench.cpuLabel"
+                  >CPU</span
+                >
+                <span class="bx-stat-name" id="cpuName"
+                  >Intel Core i9-14900K</span
+                >
+              </div>
+              <div class="bx-stat-value" id="cpuValue">41,230</div>
+            </div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-labels">
+              <span class="metric-desc" data-i18n="bench.bottleneck"
+                >اختناق (Bottleneck)</span
               >
-              <span class="benchmark-card-title">Live Benchmark</span>
+              <span
+                class="metric-status status-good"
+                id="bottleneckStatus"
+                data-i18n="bench.bottleneckStatus"
+              >
+                ممتاز ✓ 2.4%
+              </span>
             </div>
-
-            <div class="bx-stats-grid">
-              <div class="bx-stat-box">
-                <div class="bx-stat-meta">
-                  <span class="bx-stat-label">GPU</span>
-                  <span class="bx-stat-name" id="gpuName">RTX 4080 Super</span>
-                </div>
-                <div class="bx-stat-value" id="gpuValue">34,811</div>
-              </div>
-              <div class="bx-stat-box">
-                <div class="bx-stat-meta">
-                  <span class="bx-stat-label">CPU</span>
-                  <span class="bx-stat-name" id="cpuName"
-                    >Intel Core i9-14900K</span
-                  >
-                </div>
-                <div class="bx-stat-value" id="cpuValue">41,230</div>
-              </div>
+            <div class="progress-track">
+              <div
+                class="progress-fill fill-good"
+                id="bottleneckBar"
+                style="width: 2.4%"
+              ></div>
             </div>
+          </div>
 
-            <div class="metric">
-              <div class="metric-labels">
-                <span class="metric-desc">اختناق (Bottleneck)</span>
-                <span class="metric-status status-good" id="bottleneckStatus"
-                  >ممتاز ✓ 2.4%</span
-                >
-              </div>
-              <div class="progress-track">
-                <div
-                  class="progress-fill fill-good"
-                  id="bottleneckBar"
-                  style="width: 2.4%"
-                ></div>
-              </div>
+          <div class="metric">
+            <div class="metric-labels">
+              <span class="metric-desc" data-i18n="bench.fpsLabel">
+                FPS — Cyberpunk 2077 · 1080p Ultra
+              </span>
+              <span
+                class="metric-status status-fps"
+                id="fpsStatus"
+                data-i18n="bench.fpsStatus"
+              >
+                FPS 148
+              </span>
             </div>
-
-            <div class="metric">
-              <div class="metric-labels">
-                <span class="metric-desc"
-                  >FPS — Cyberpunk 2077 · 1080p Ultra</span
-                >
-                <span class="metric-status status-fps" id="fpsStatus"
-                  >FPS 148</span
-                >
-              </div>
-              <div class="progress-track">
-                <div
-                  class="progress-fill fill-fps"
-                  id="fpsBar"
-                  style="width: 60%"
-                ></div>
-              </div>
+            <div class="progress-track">
+              <div
+                class="progress-fill fill-fps"
+                id="fpsBar"
+                style="width: 60%"
+              ></div>
             </div>
+          </div>
 
-            <div class="metric">
-              <div class="metric-labels">
-                <span class="metric-desc">Future Proof Score</span>
-                <span class="metric-status status-future" id="futureStatus"
-                  >100 / 87</span
-                >
-              </div>
-              <div class="progress-track">
-                <div
-                  class="progress-fill fill-future"
-                  id="futureBar"
-                  style="width: 87%"
-                ></div>
-              </div>
+          <div class="metric">
+            <div class="metric-labels">
+              <span class="metric-desc" data-i18n="bench.futureLabel"
+                >Future Proof Score</span
+              >
+              <span
+                class="metric-status status-future"
+                id="futureStatus"
+                data-i18n="bench.futureStatus"
+              >
+                100 / 87
+              </span>
+            </div>
+            <div class="progress-track">
+              <div
+                class="progress-fill fill-future"
+                id="futureBar"
+                style="width: 87%"
+              ></div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <section class="stats">
       <div class="container">
         <div class="stats-grid">
           <div class="stat">
             <h3 class="count stat-heading">154</h3>
-            <p class="stat-desc">ميزة مخططة</p>
+            <p class="stat-desc" data-i18n="stats.plannedFeatures">
+              ميزة مخططة
+            </p>
           </div>
 
           <div class="stat">
             <h3 class="count stat-heading">50000</h3>
-            <p class="stat-desc">قطعة في الداتابيز</p>
-          </div>
-          <div class="stat">
-            <h3 class="stat-heading">#1</h3>
-            <p class="stat-desc">هدفنا عالمياً</p>
-          </div>
-          <div class="stat">
-            <h3 class="count stat-heading">180</h3>
-            <p class="stat-desc">لعبة مدعومة</p>
+            <p class="stat-desc" data-i18n="stats.databaseParts">
+              قطعة في الداتابيز
+            </p>
           </div>
 
+          <div class="stat">
+            <h3 class="stat-heading">#1</h3>
+            <p class="stat-desc" data-i18n="stats.goal">هدفنا عالمياً</p>
+          </div>
+
+          <div class="stat">
+            <h3 class="count stat-heading">180</h3>
+            <p class="stat-desc" data-i18n="stats.supportedGames">
+              لعبة مدعومة
+            </p>
+          </div>
+        </div>
       </div>
     </section>
+
     <section class="why-us">
       <div class="container">
-        <h2 class="section-heading">لماذا لا تكفي المواقع الأخرى؟</h2>
+        <div class="section-heading">
+          <span></span>
+          <h2 data-i18n="whyus.title">لماذا لا تكفي المواقع الأخرى؟</h2>
+          <span></span>
+        </div>
         <div id="why-us-container" class="why-us-grid"></div>
       </div>
     </section>
+
     <section class="features">
       <div class="container">
-        <h2 class="section-heading">اكتشف إمكانيات المنصة</h2>
+        <div class="section-heading">
+          <span></span>
+          <h2 data-i18n="features.title">اكتشف إمكانيات المنصة</h2>
+          <span></span>
+        </div>
         <div id="features-container" class="features-grid"></div>
       </div>
     </section>
@@ -312,9 +412,9 @@
             <div class="footer-brand">
               <a href="#" class="logo">
                 <span class="name">elKaeron</span>
-                PcBenchPro</a
-              >
-              <p class="footer-desc">
+                <span data-i18n="brand.sub">PcBenchPro</span>
+              </a>
+              <p class="footer-desc" data-i18n="footer.desc">
                 منصتك الشاملة لتجميع وفحص وتطوير أجهزة الكمبيوتر، بمعايير دقيقة
                 وبيانات حقيقية.
               </p>
@@ -349,37 +449,56 @@
             </div>
 
             <div class="footer-links-group">
-              <h4 class="footer-heading">الأدوات</h4>
+              <h4 class="footer-heading" data-i18n="footer.tools">الأدوات</h4>
               <ul class="footer-links">
-                <li><a href="#">مجمّع الجهاز</a></li>
-                <li><a href="#">فحص الاختناق</a></li>
-                <li><a href="#">خطة الترقية</a></li>
-                <li><a href="#">توقع الأداء</a></li>
-                <li><a href="#">جهوزية المستقبل</a></li>
-                <li><a href="#">مقارنة التجميعات</a></li>
+                <li><a href="#" data-i18n="nav.builder">مجمّع الجهاز</a></li>
+                <li><a href="#" data-i18n="nav.bottleneck">فحص الاختناق</a></li>
+                <li><a href="#" data-i18n="nav.upgradePlan">خطة الترقية</a></li>
+                <li>
+                  <a href="#" data-i18n="nav.performanceForecast"
+                    >توقع الأداء</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-i18n="nav.futureReady">جهوزية المستقبل</a>
+                </li>
+                <li>
+                  <a href="#" data-i18n="nav.compare">مقارنة التجميعات</a>
+                </li>
               </ul>
             </div>
 
             <div class="footer-links-group">
-              <h4 class="footer-heading">الشركة</h4>
+              <h4 class="footer-heading" data-i18n="footer.company">الشركة</h4>
               <ul class="footer-links">
-                <li><a href="support/">الدعم الفني</a></li>
-                <li><a href="signup/">تسجيل الدخول</a></li>
-                <li><a href="#">سياسة الخصوصية</a></li>
-                <li><a href="#">الشروط والأحكام</a></li>
+                <li>
+                  <a href="support/" data-i18n="footer.support">الدعم الفني</a>
+                </li>
+                <li>
+                  <a href="signup/" data-i18n="auth.login">تسجيل الدخول</a>
+                </li>
+                <li>
+                  <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+                </li>
+                <li>
+                  <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
+                </li>
               </ul>
             </div>
           </div>
         </div>
+
         <hr class="footer-divider" />
+
         <div class="footer-bottom">
-          <p class="footer-copy">
+          <p class="footer-copy" data-i18n="footer.copy">
             © <span id="currentYear"></span> elKaeron PcBenchPro. جميع الحقوق
             محفوظة.
           </p>
         </div>
       </div>
     </footer>
+
     <script src="main.js"></script>
   </body>
 </html>

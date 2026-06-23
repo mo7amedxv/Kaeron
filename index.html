@@ -188,6 +188,85 @@
             </button>
           </div>
         </div>
+
+          <div class="benchmark-card">
+            <div class="card-header">
+              <span class="live-indicator"
+                ><span class="live-dot"></span>تحليل حي</span
+              >
+              <span class="banchmark-card-title">Live Benchmark</span>
+            </div>
+
+            <div class="bx-stats-grid">
+              <div class="bx-stat-box">
+                <div class="bx-stat-meta">
+                  <span class="bx-stat-label">GPU</span>
+                  <span class="bx-stat-name" id="gpuName">RTX 4080 Super</span>
+                </div>
+                <div class="bx-stat-value" id="gpuValue">34,811</div>
+              </div>
+              <div class="bx-stat-box">
+                <div class="bx-stat-meta">
+                  <span class="bx-stat-label">CPU</span>
+                  <span class="bx-stat-name" id="cpuName"
+                    >Intel Core i9-14900K</span
+                  >
+                </div>
+                <div class="bx-stat-value" id="cpuValue">41,230</div>
+              </div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-labels">
+                <span class="metric-desc">اختناق (Bottleneck)</span>
+                <span class="metric-status status-good" id="bottleneckStatus"
+                  >ممتاز ✓ 2.4%</span
+                >
+              </div>
+              <div class="progress-track">
+                <div
+                  class="progress-fill fill-good"
+                  id="bottleneckBar"
+                  style="width: 2.4%"
+                ></div>
+              </div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-labels">
+                <span class="metric-desc"
+                  >FPS — Cyberpunk 2077 · 1080p Ultra</span
+                >
+                <span class="metric-status status-fps" id="fpsStatus"
+                  >FPS 148</span
+                >
+              </div>
+              <div class="progress-track">
+                <div
+                  class="progress-fill fill-fps"
+                  id="fpsBar"
+                  style="width: 60%"
+                ></div>
+              </div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-labels">
+                <span class="metric-desc">Future Proof Score</span>
+                <span class="metric-status status-future" id="futureStatus"
+                  >100 / 87</span
+                >
+              </div>
+              <div class="progress-track">
+                <div
+                  class="progress-fill fill-future"
+                  id="futureBar"
+                  style="width: 87%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="stats">
@@ -210,7 +289,7 @@
             <h3 class="count stat-heading">180</h3>
             <p class="stat-desc">لعبة مدعومة</p>
           </div>
-        </div>
+
       </div>
     </section>
     <section class="why-us">

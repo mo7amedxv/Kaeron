@@ -79,7 +79,7 @@ const featuresContainer = document.getElementById("features-container");
 featuresData.forEach((feature) => {
   const card = document.createElement("div");
   card.className = "feature-card card";
-
+  card.setAttribute("tabindex", "0");
   card.innerHTML = `
     <div class="feature-icon card-icon">${feature.icon}</div>
     <h3 class="feature-heading card-title">${feature.title}</h3>
@@ -111,7 +111,7 @@ const whyUsContainer = document.getElementById("why-us-container");
 whyUsData.forEach((item) => {
   const card = document.createElement("div");
   card.className = "card why-us-card";
-
+  card.setAttribute("tabindex", "0");
   card.innerHTML = `
     <div class="card-icon why-us-number">${item.number}</div>
     <h3 class="card-title why-us-title">${item.title}</h3>
@@ -120,3 +120,111 @@ whyUsData.forEach((item) => {
   whyUsContainer.appendChild(card);
 });
 document.getElementById("currentYear").textContent = new Date().getFullYear();
+const MAX_FPS = 240; // reference scale used to size the FPS bar
+
+function clamp(v, min, max) {
+  return Math.min(max, Math.max(min, v));
+}
+
+// Call this with any subset of fields to update the card.
+function updateBenchmark(data) {
+  if (data.gpu) {
+    if (data.gpu.score != null) {
+      document.getElementById("gpuValue").textContent = Number(
+        data.gpu.score,
+      ).toLocaleString("en-US");
+    }
+    if (data.gpu.name)
+      document.getElementById("gpuName").textContent = data.gpu.name;
+  }
+
+  if (data.cpu) {
+    if (data.cpu.score != null) {
+      document.getElementById("cpuValue").textContent = Number(
+        data.cpu.score,
+      ).toLocaleString("en-US");
+    }
+    if (data.cpu.name)
+      document.getElementById("cpuName").textContent = data.cpu.name;
+  }
+
+  if (data.bottleneckPercent != null) {
+    const p = clamp(data.bottleneckPercent, 0, 100);
+    document.getElementById("bottleneckBar").style.width = p + "%";
+    const label =
+      data.bottleneckLabel || (p < 5 ? "ممتاز" : p < 15 ? "جيد" : "مرتفع");
+    document.getElementById("bottleneckStatus").textContent =
+      `${label} ✓ ${p.toFixed(1)}%`;
+  }
+
+  if (data.fps != null) {
+    document.getElementById("fpsStatus").textContent =
+      `FPS ${Math.round(data.fps)}`;
+    document.getElementById("fpsBar").style.width =
+      clamp((data.fps / MAX_FPS) * 100, 0, 100) + "%";
+  }
+
+  if (data.futureTotal != null && data.futureScore != null) {
+    document.getElementById("futureStatus").textContent =
+      `${data.futureTotal} / ${data.futureScore}`;
+    document.getElementById("futureBar").style.width =
+      clamp((data.futureScore / data.futureTotal) * 100, 0, 100) + "%";
+  }
+}
+
+// ---- Demo only: simulates a live feed so you can see it move. ----
+// Delete this block and use the fetch() example below for real data.
+let liveState = {
+  gpu: 34811,
+  cpu: 41230,
+  bottleneck: 2.4,
+  fps: 148,
+  future: 87,
+};
+
+function simulateLiveTick() {
+  liveState.gpu = clamp(
+    liveState.gpu + Math.round((Math.random() - 0.5) * 120),
+    1000,
+    99999,
+  );
+  liveState.cpu = clamp(
+    liveState.cpu + Math.round((Math.random() - 0.5) * 150),
+    1000,
+    99999,
+  );
+  liveState.bottleneck = clamp(
+    liveState.bottleneck + (Math.random() - 0.5) * 0.6,
+    0,
+    30,
+  );
+  liveState.fps = clamp(
+    Math.round(liveState.fps + (Math.random() - 0.5) * 8),
+    30,
+    240,
+  );
+  liveState.future = clamp(
+    Math.round(liveState.future + (Math.random() - 0.5) * 2),
+    0,
+    100,
+  );
+
+  updateBenchmark({
+    gpu: { score: liveState.gpu },
+    cpu: { score: liveState.cpu },
+    bottleneckPercent: liveState.bottleneck,
+    fps: liveState.fps,
+    futureTotal: 100,
+    futureScore: liveState.future,
+  });
+}
+
+setInterval(simulateLiveTick, 2500);
+
+// ---- Real usage: replace the simulation above with something like ----
+// async function fetchLiveBenchmark() {
+//   const res = await fetch('/api/benchmark/live');
+//   const data = await res.json();
+//   updateBenchmark(data);
+// }
+// setInterval(fetchLiveBenchmark, 3000);

@@ -12,6 +12,7 @@
   --bg3: #1c1c1c;
   --bg4: #242424;
   --bg5: #2e2e2e;
+  --bg6: #2c2c2c7d;
   --accent: #9c9c9c;
   --accent2: #c8c8c8;
   --accent3: #e8e8e8;
@@ -81,6 +82,7 @@ html[dir="ltr"] {
   --bg3: #ebebeb;
   --bg4: #e0e0e0;
   --bg5: #d4d4d4;
+  --bg6: #e2e2e2;
   --accent: #3a3a3a;
   --accent2: #5a5a5a;
   --accent3: #7a7a7a;
@@ -147,7 +149,8 @@ header {
   margin-block: 0 var(--space-3xl);
 }
 .features,
-.why-us {
+.why-us,
+.ai-proof {
   margin-block: var(--space-3xl);
   padding-block: var(--space-lg);
 }
@@ -322,7 +325,7 @@ body.light-mode .theme-btn .icon-light {
 
 .bx-stat-value {
   font-size: var(--font-xl);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semi);
   color: var(--accent);
   letter-spacing: 0.02em;
 }
@@ -670,7 +673,7 @@ body.menu-open {
   .hero-btn {
     padding: var(--space-lg) var(--space-xl);
   }
-  .mobile-header-actions .theme-btn{
+  .mobile-header-actions .theme-btn {
     height: 30px;
   }
 }
@@ -730,6 +733,7 @@ body.menu-open {
   color: var(--text);
   font-size: var(--font-lg);
   margin-block: var(--space-sm);
+  font-weight: var(--weight-semi);
 }
 :focus-visible {
   outline: 1px dashed var(--text);
@@ -925,4 +929,56 @@ body.menu-open {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
   }
+}
+
+.ai-box {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--bg2);
+  padding: var(--space-xl) var(--space-md);
+  margin-top: var(--space-lg);
+}
+.chat-demo {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.c-who {
+  color: var(--text2);
+}
+.bubble {
+  background-color: var(--bg3);
+  padding: var(--space-md);
+
+  max-width: 450px;
+}
+.bubble.bu {
+  border-radius: var(--radius-md) var(--radius-sm) var(--radius-md)
+    var(--radius-md);
+}
+.c-msg {
+  display: flex;
+  flex-direction: column;
+}
+.c-msg:not(:last-child) {
+  margin-bottom: var(--space-lg);
+}
+
+.c-msg.msg2 {
+  align-items: flex-end;
+}
+.c-msg.msg2 .c-who {
+  color: var(--text);
+}
+.bubble.ba {
+  background-color: var(--bg6);
+  border-radius: var(--radius-sm) var(--radius-md) var(--radius-md)
+    var(--radius-md);
+}
+html[dir="ltr"] .bubble.ba {
+  border-radius: var(--radius-md) var(--radius-sm) var(--radius-md)
+    var(--radius-md);
+}
+html[dir="ltr"] .bubble.bu {
+  border-radius: var(--radius-sm) var(--radius-md) var(--radius-md)
+    var(--radius-md);
 }

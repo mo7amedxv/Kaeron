@@ -305,6 +305,15 @@ const translations = {
     "footer.privacy": "سياسة الخصوصية",
     "footer.terms": "الشروط والأحكام",
     "footer.copy": "© elKaeron PcBenchPro. جميع الحقوق محفوظة.",
+    "ai-proof.title": "مساعد ذكي متخصص في الهاردوير",
+    "ai-proof.you": "أنت",
+    "ai-proof.ai": "elKaeron AI",
+    "ai-proof.msg1": "عندي ميزانية 20,000 جنيه — أنسب تجميعة ألعاب إيه؟",
+    "ai-proof.reply1":
+      "بناءً على ميزانيتك وأسعار السوق المصري الحالية: Ryzen 5 7600 + RX 7700 XT + 16GB DDR5. هتحصل على 120+ FPS في معظم الألعاب عند 1080p مع Future Proof Score 82/100. الاختناق 1.8% فقط. تحتاج تفاصيل؟",
+    "ai-proof.msg2": "هل RTX 4070 بدلها هتكون أحسن؟",
+    "ai-proof.reply2":
+      "RTX 4070 هتدي +12% في Ray Tracing لكنها أغلى بـ4,500 جنيه وهتخرجك من الميزانية. لو الألعاب الحالية هدفك، RX 7700 XT أذكى. لو عندك مرونة في الميزانية، نقدر نبص على خيار تاني.",
   },
 
   en: {
@@ -404,6 +413,16 @@ const translations = {
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms and Conditions",
     "footer.copy": "© elKaeron PcBenchPro. All rights reserved.",
+    "ai-proof.title": "Smart Hardware-Specialized Assistant",
+    "ai-proof.you": "You",
+    "ai-proof.ai": "elKaeron AI",
+    "ai-proof.msg1":
+      "I have a budget of 20,000 EGP — what's the best gaming build?",
+    "ai-proof.reply1":
+      "Based on your budget and current Egyptian market prices: Ryzen 5 7600 + RX 7700 XT + 16GB DDR5. You'll get 120+ FPS in most games at 1080p with a Future Proof Score of 82/100. Bottleneck is only 1.8%. Want the details?",
+    "ai-proof.msg2": "Would an RTX 4070 be a better choice instead?",
+    "ai-proof.reply2":
+      "The RTX 4070 gives +12% in Ray Tracing but costs 4,500 EGP more and pushes you over budget. If current games are your target, the RX 7700 XT is the smarter pick. If you have some budget flexibility, we can look at another option.",
   },
 };
 function translatePage(lang) {

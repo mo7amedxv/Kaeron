@@ -219,8 +219,8 @@ const translations = {
     "brand.sub": "PcBenchPro",
 
     "lang.select": "اختر اللغة",
-    "lang.ar": "العربية",
-    "lang.en": "English",
+    "lang.ar": "عربي",
+    "lang.en": "EN",
 
     "theme.toggle": "تبديل المظهر",
     "nav.menu": "القائمة",
@@ -318,8 +318,8 @@ const translations = {
     "brand.sub": "PcBenchPro",
 
     "lang.select": "Select language",
-    "lang.ar": "Arabic",
-    "lang.en": "English",
+    "lang.ar": "عربي",
+    "lang.en": "EN",
 
     "theme.toggle": "Toggle theme",
     "nav.menu": "Menu",

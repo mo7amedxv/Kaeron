@@ -211,10 +211,10 @@ const translations = {
   ar: {
     "site.title": "elkaeron",
     "meta.description":
-      "اكتشف كل ما يخص عالم الكمبيوتر في PcBench Builder. مراجعات لأحدث قطع الهاردوير، تجميعات كمبيوتر للألعاب والعمل، شروحات صيانة، وحلول لأشهر مشاكل التشغيل والويندوز.",
-    "og.title": "elkaeron | دليلك الشامل لعالم الكمبيوتر والتقنية",
+      "منصة متكاملة لبناء تجميعات الحاسوب، فحص التوافق، تحليل الأداء الحقيقي، وتوقع معدل الإطارات — كل ذلك في مكانٍ واحد.",
+    "og.title": "elKaeron | منصتك لبناء الحاسوب وتحليل الأداء",
     "og.description":
-      "مراجعات هاردوير، تجميعات كمبيوتر، وشروحات صيانة مبسطة تناسب المبتدئين والمحترفين.",
+      "بنِ تجميعتك، افحص التوافق، وتوقّع أداءك — بدقة وبدون تحيّز.",
 
     "brand.sub": "PcBenchPro",
 
@@ -234,12 +234,14 @@ const translations = {
 
     "auth.login": "دخول / تسجيل",
 
-    "hero.title": "كل ما تحتاجه لجهازك في مكان واحد",
+    // ─── Hero ───────────────────────────────────────────────
+    "hero.title": "كل ما تحتاجه لجهازك في مكانٍ واحد",
     "hero.desc":
-      "المنصة العالمية لمحترفي وهواة PC بناء التجميعات، فحص التوافق، تحليل الأداء الحقيقي، توقع الـ FPS، كل شيء في مكان واحد،",
+      "بنِ تجميعتك، افحص التوافق، وتوقّع الأداء — منصة واحدة متكاملة للمبتدئ والمحترف.",
     "hero.ctaPrimary": "ابدأ تجميعتك",
-    "hero.ctaSecondary": "جرب الـمساعد الذكي",
+    "hero.ctaSecondary": "جرّب المساعد الذكي",
 
+    // ─── Bench Widget ────────────────────────────────────────
     "bench.live": "تحليل حي",
     "bench.title": "Live Benchmark",
     "bench.gpuLabel": "GPU",
@@ -251,61 +253,63 @@ const translations = {
     "bench.futureLabel": "Future Proof Score",
     "bench.futureStatus": "100 / 87",
 
+    // ─── Stats ───────────────────────────────────────────────
     "stats.plannedFeatures": "ميزة مخططة",
     "stats.databaseParts": "قطعة في الداتابيز",
     "stats.goal": "هدفنا عالمياً",
     "stats.supportedGames": "لعبة مدعومة",
 
-    "whyus.title": "لماذا لا تكفي المواقع الأخرى؟",
-    "features.title": "اكتشف إمكانيات المنصة",
+    // ─── Section Titles ──────────────────────────────────────
+    "whyus.title": "أين تُخفق المنصات الأخرى؟",
+    "features.title": "استكشف المنصة",
 
-    "features.builder.title": "مُنشئ التجميعات",
-    "features.builder.desc":
-      "أنشئ تجميعة حاسوب كاملة من الصفر مع اختيار جميع القطع ومتابعة السعر الإجمالي لحظيًا.",
-    "features.compat.title": "التوافقية",
+    // ─── Features ────────────────────────────────────────────
+    "features.builder.title": "ابنِ تجميعتك",
+    "features.builder.desc": "اختَر قطعك وشاهد السعر الإجمالي يتحدّث لحظيًا.",
+
+    "features.compat.title": "توافق مضمون",
     "features.compat.desc":
-      "تحقق من توافق جميع المكونات لضمان عمل التجميعة بكفاءة وتجنب أي مشاكل قبل الشراء.",
-    "features.bottleneck.title": "عنق الزجاجة",
-    "features.bottleneck.desc":
-      "اكتشف الاختناق المحتمل بين المعالج وكرت الشاشة واحصل على تحليل دقيق للأداء.",
-    "features.fps.title": "توقع الأداء",
-    "features.fps.desc":
-      "تعرّف على معدل الإطارات المتوقع (FPS) في ألعابك المفضلة قبل شراء القطع.",
-    "features.futureProof.title": "الاستمرارية المستقبلية",
+      "تحقّق من توافق جميع القطع قبل أن تنفق قرشاً واحداً.",
+
+    "features.bottleneck.title": "اكتشف الاختناق",
+    "features.bottleneck.desc": "اعرف أيّ قطعة تُعيق أداء جهازك بتحليل دقيق.",
+
+    "features.fps.title": "توقّع الأداء مسبقاً",
+    "features.fps.desc": "اعرف كم FPS ستحصل عليه في ألعابك المفضلة قبل الشراء.",
+
+    "features.futureProof.title": "جاهز للمستقبل؟",
     "features.futureProof.desc":
-      "قيّم مدى قدرة تجميعتك على مواكبة الألعاب والبرامج المستقبلية لسنوات قادمة.",
+      "اعرف كم سنةً يصمد جهازك أمام الألعاب والبرامج القادمة.",
+
     "features.upgrade.title": "مسار الترقية",
-    "features.upgrade.desc":
-      "احصل على خطة ترقية ذكية وتدريجية تساعدك على تطوير تجميعتك بأفضل طريقة ممكنة.",
+    "features.upgrade.desc": "طوِّر جهازك بالتدريج بأذكى طريقة وبأقل تكلفة.",
+
     "features.compare.title": "مقارنة التجميعات",
     "features.compare.desc":
-      "قارن بين تجميعتين كاملتين من حيث الأداء والسعر والمواصفات لاتخاذ القرار الأفضل.",
+      "قارن بين تجميعتين في الأداء والسعر واتخذ قرارك بثقة.",
+
     "features.assistant.title": "المساعد الذكي",
     "features.assistant.desc":
-      "اسأل أي سؤال عن الهاردوير واحصل على إجابات فورية من مساعد متخصص بالقطع والتوافق.",
+      "اسأل أيّ سؤال عن الهاردوير واحصل على إجابة فورية من مساعد متخصص.",
 
+    // ─── Why Us Cards ────────────────────────────────────────
     "whyus.scattered.number": "١",
-    "whyus.scattered.title": "الأدوات متفرقة",
+    "whyus.scattered.title": "أدوات مبعثرة",
     "whyus.scattered.desc":
-      "تقوم بالتحقق من التوافق في موقع، وتقارن الأسعار في موقع آخر، وتبحث عن اختبارات الأداء في موقع ثالث، دون وجود منصة واحدة تجمع كل ذلك في تجربة متكاملة.",
-    "whyus.beginners.number": "٢",
-    "whyus.beginners.title": "صعوبة الاستخدام للمبتدئين",
-    "whyus.beginners.desc":
-      "معظم المنصات مصممة للمستخدمين المتقدمين فقط. وإذا كانت هذه أول تجميعة لك، فقد تواجه صعوبة وتحتاج إلى استشارة عدة مصادر قبل اتخاذ قرارك.",
-    "whyus.database.number": "٣",
-    "whyus.database.title": "نقص قاعدة بيانات القطع",
-    "whyus.database.desc":
-      "الكثير من القطع الحديثة أو المتوفرة في أسواقنا غير مدرجة في معظم المنصات، مما يجعل عملية البحث والمقارنة محدودة وصعبة خارج أشهر الموديلات.",
+      "التوافق في موقع، الأسعار في ثانٍ، والأداء في ثالث. لا منصة واحدة تجمع كل شيء.",
 
-    "footer.desc":
-      "منصتك الشاملة لتجميع وفحص وتطوير أجهزة الكمبيوتر، بمعايير دقيقة وبيانات حقيقية.",
-    "footer.tools": "الأدوات",
-    "footer.company": "الشركة",
-    "footer.support": "الدعم الفني",
-    "footer.privacy": "سياسة الخصوصية",
-    "footer.terms": "الشروط والأحكام",
-    "footer.copy": "© elKaeron PcBenchPro. جميع الحقوق محفوظة.",
-    "ai-proof.title": "مساعد ذكي متخصص في الهاردوير",
+    "whyus.beginners.number": "٢",
+    "whyus.beginners.title": "معقّدة على المبتدئ",
+    "whyus.beginners.desc":
+      "معظمها مصممة للمحترفين. أما المبتدئ فيجد نفسه ضائعاً بين المصادر.",
+
+    "whyus.database.number": "٣",
+    "whyus.database.title": "قطع غائبة عن السوق المحلي",
+    "whyus.database.desc":
+      "قطع متوفرة في أسواقنا لا تجدها في أي منصة، مما يُعيق البحث والمقارنة.",
+
+    // ─── AI Proof Section ────────────────────────────────────
+    "ai-proof.title": "جهازك المثالي يبدأ من هنا",
     "ai-proof.you": "أنت",
     "ai-proof.ai": "elKaeron AI",
     "ai-proof.msg1": "عندي ميزانية 20,000 جنيه — أنسب تجميعة ألعاب إيه؟",
@@ -314,15 +318,25 @@ const translations = {
     "ai-proof.msg2": "هل RTX 4070 بدلها هتكون أحسن؟",
     "ai-proof.reply2":
       "RTX 4070 هتدي +12% في Ray Tracing لكنها أغلى بـ4,500 جنيه وهتخرجك من الميزانية. لو الألعاب الحالية هدفك، RX 7700 XT أذكى. لو عندك مرونة في الميزانية، نقدر نبص على خيار تاني.",
+
+    // ─── Footer ──────────────────────────────────────────────
+    "footer.desc":
+      "منصة متكاملة لبناء وفحص وتطوير أجهزة الحاسوب — بمعايير دقيقة وبيانات حقيقية.",
+    "footer.tools": "الأدوات",
+    "footer.company": "الشركة",
+    "footer.support": "الدعم الفني",
+    "footer.privacy": "سياسة الخصوصية",
+    "footer.terms": "الشروط والأحكام",
+    "footer.copy": "© elKaeron PcBenchPro. جميع الحقوق محفوظة.",
   },
 
   en: {
     "site.title": "elkaeron",
     "meta.description":
-      "Discover everything about computers in PcBench Builder. Reviews of the latest hardware, PC builds for gaming and work, maintenance guides, and fixes for common boot and Windows issues.",
-    "og.title": "elkaeron | Your complete guide to computers and tech",
+      "Build your PC, check compatibility, and forecast performance — all in one platform.",
+    "og.title": "elKaeron | Build, Analyze & Optimize Your PC",
     "og.description":
-      "Hardware reviews, PC builds, and simplified maintenance guides for beginners and professionals.",
+      "PC builds, compatibility checks, and real performance analysis — unbiased, for everyone.",
 
     "brand.sub": "PcBenchPro",
 
@@ -342,12 +356,14 @@ const translations = {
 
     "auth.login": "Sign in / Register",
 
+    // ─── Hero ───────────────────────────────────────────────
     "hero.title": "Everything you need for your PC in one place",
     "hero.desc":
-      "The global platform for PC enthusiasts and builders: compatibility checks, real performance analysis, FPS prediction, and more — all in one place.",
+      "Build your rig, check compatibility, and forecast performance — one platform for beginners and pros alike.",
     "hero.ctaPrimary": "Start your build",
-    "hero.ctaSecondary": "Try our assistant",
+    "hero.ctaSecondary": "Try the AI assistant",
 
+    // ─── Bench Widget ────────────────────────────────────────
     "bench.live": "Live analysis",
     "bench.title": "Live Benchmark",
     "bench.gpuLabel": "GPU",
@@ -359,70 +375,86 @@ const translations = {
     "bench.futureLabel": "Future Proof Score",
     "bench.futureStatus": "100 / 87",
 
+    // ─── Stats ───────────────────────────────────────────────
     "stats.plannedFeatures": "Planned features",
     "stats.databaseParts": "Parts in database",
     "stats.goal": "Our global goal",
     "stats.supportedGames": "Supported games",
 
-    "whyus.title": "Why are other websites not enough?",
-    "features.title": "Explore the platform’s capabilities",
+    // ─── Section Titles ──────────────────────────────────────
+    "whyus.title": "Where Others Fall Short",
+    "features.title": "Explore the Platform",
 
+    // ─── Features ────────────────────────────────────────────
     "features.builder.title": "PC Builder",
     "features.builder.desc":
-      "Build a complete PC from scratch, choosing every part while tracking the total price in real time.",
-    "features.compat.title": "Compatibility",
+      "Pick your parts and watch the total price update in real time.",
+
+    "features.compat.title": "Guaranteed Compatibility",
     "features.compat.desc":
-      "Check that all components are compatible to keep your build running smoothly and avoid issues before buying.",
-    "features.bottleneck.title": "Bottleneck",
+      "Verify every component works together before spending a single dollar.",
+
+    "features.bottleneck.title": "Bottleneck Detector",
     "features.bottleneck.desc":
-      "Detect potential bottlenecks between your CPU and GPU and get an accurate performance analysis.",
+      "Find out exactly which part is holding your system back.",
+
     "features.fps.title": "Performance Forecast",
     "features.fps.desc":
-      "Find out the expected frame rate (FPS) in your favorite games before buying parts.",
-    "features.futureProof.title": "Future Readiness",
+      "Know your expected FPS in your favorite games before you buy.",
+
+    "features.futureProof.title": "Future Ready?",
     "features.futureProof.desc":
-      "Evaluate how well your build can keep up with upcoming games and software for years to come.",
+      "See how many years your build can keep up with upcoming games and software.",
+
     "features.upgrade.title": "Upgrade Path",
     "features.upgrade.desc":
-      "Get a smart, gradual upgrade plan to help you improve your build in the best possible way.",
+      "Level up your build gradually, smartly, and at minimum cost.",
+
     "features.compare.title": "Build Comparison",
     "features.compare.desc":
-      "Compare two complete builds in performance, price, and specs to make the best decision.",
+      "Compare two builds on performance and price — and decide with confidence.",
+
     "features.assistant.title": "Smart Assistant",
     "features.assistant.desc":
-      "Ask any hardware question and get instant answers from an assistant specialized in parts and compatibility.",
+      "Ask any hardware question and get an instant answer from a specialized AI.",
 
+    // ─── Why Us Cards ────────────────────────────────────────
     "whyus.scattered.number": "1",
     "whyus.scattered.title": "Tools are scattered",
     "whyus.scattered.desc":
-      "You check compatibility on one site, compare prices on another, and look for benchmarks on a third — with no single platform bringing it all together.",
-    "whyus.beginners.number": "2",
-    "whyus.beginners.title": "Hard to use for beginners",
-    "whyus.beginners.desc":
-      "Most platforms are built for advanced users only. If this is your first build, you may struggle and need several sources before deciding.",
-    "whyus.database.number": "3",
-    "whyus.database.title": "Incomplete parts database",
-    "whyus.database.desc":
-      "Many newer or locally available parts are missing from most platforms, making search and comparison limited outside the most popular models.",
+      "Compatibility on one site, prices on another, benchmarks on a third. No single platform ties it all together.",
 
+    "whyus.beginners.number": "2",
+    "whyus.beginners.title": "Too complex for beginners",
+    "whyus.beginners.desc":
+      "Most platforms are built for power users. If it's your first build, you'll get lost between sources.",
+
+    "whyus.database.number": "3",
+    "whyus.database.title": "Local market parts go missing",
+    "whyus.database.desc":
+      "Parts widely available in local markets aren't listed on most platforms, making search and comparison a dead end.",
+
+    // ─── AI Proof Section ────────────────────────────────────
+    "ai-proof.title": "Your build, perfected",
+    "ai-proof.you": "You",
+    "ai-proof.ai": "elKaeron AI",
+    "ai-proof.msg1":
+      "I have a budget of 20,000 EGP — what's the best gaming build?",
+    "ai-proof.reply1":
+      "Based on your budget and current Egyptian market prices: Ryzen 5 7600 + RX 7700 XT + 16GB DDR5. You'll get 120+ FPS in most games at 1080p with a Future Proof Score of 82/100. Bottleneck is only 1.8%. Want the full breakdown?",
+    "ai-proof.msg2": "Would an RTX 4070 be a better choice instead?",
+    "ai-proof.reply2":
+      "The RTX 4070 gives +12% in Ray Tracing but costs 4,500 EGP more and pushes you over budget. If current games are your target, the RX 7700 XT is the smarter pick. If you have some flexibility, we can explore another option.",
+
+    // ─── Footer ──────────────────────────────────────────────
     "footer.desc":
-      "Your all-in-one platform to build, check, and improve PC systems with precise standards and real data.",
+      "Your all-in-one platform to build, check, and improve PC systems — with real data and zero bias.",
     "footer.tools": "Tools",
     "footer.company": "Company",
     "footer.support": "Support",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms and Conditions",
     "footer.copy": "© elKaeron PcBenchPro. All rights reserved.",
-    "ai-proof.title": "Smart Hardware-Specialized Assistant",
-    "ai-proof.you": "You",
-    "ai-proof.ai": "elKaeron AI",
-    "ai-proof.msg1":
-      "I have a budget of 20,000 EGP — what's the best gaming build?",
-    "ai-proof.reply1":
-      "Based on your budget and current Egyptian market prices: Ryzen 5 7600 + RX 7700 XT + 16GB DDR5. You'll get 120+ FPS in most games at 1080p with a Future Proof Score of 82/100. Bottleneck is only 1.8%. Want the details?",
-    "ai-proof.msg2": "Would an RTX 4070 be a better choice instead?",
-    "ai-proof.reply2":
-      "The RTX 4070 gives +12% in Ray Tracing but costs 4,500 EGP more and pushes you over budget. If current games are your target, the RX 7700 XT is the smarter pick. If you have some budget flexibility, we can look at another option.",
   },
 };
 function translatePage(lang) {

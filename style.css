@@ -940,6 +940,7 @@ body.menu-open {
 }
 .chat-demo {
   max-width: 800px;
+  padding-inline:var(--space-md) ;
   margin: 0 auto;
 }
 .c-who {
@@ -948,7 +949,8 @@ body.menu-open {
 .bubble {
   background-color: var(--bg3);
   padding: var(--space-md);
-
+  font-size: var(--font-sm);
+  line-height: var(--leading-normal);
   max-width: 450px;
 }
 .bubble.bu {
@@ -966,9 +968,7 @@ body.menu-open {
 .c-msg.msg2 {
   align-items: flex-end;
 }
-.c-msg.msg2 .c-who {
-  color: var(--text);
-}
+
 .bubble.ba {
   background-color: var(--bg6);
   border-radius: var(--radius-sm) var(--radius-md) var(--radius-md)

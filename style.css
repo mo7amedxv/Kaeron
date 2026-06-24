@@ -54,7 +54,19 @@
   --main-transtion: 0.3s;
   --btn-text-color: #f2f2f2;
 }
-
+html[dir="ltr"] {
+  --font-xs: clamp(0.7rem, 0.68rem + 0.08vw, 0.75rem);
+  --font-sm: clamp(0.8rem, 0.78rem + 0.13vw, 0.875rem);
+  --font-base: clamp(0.9rem, 0.87rem + 0.17vw, 1rem);
+  --font-md: clamp(1.05rem, 0.98rem + 0.33vw, 1.25rem);
+  --font-lg: clamp(1.25rem, 1.15rem + 0.52vw, 1.563rem);
+  --font-xl: clamp(1.5rem, 1.35rem + 0.76vw, 1.953rem);
+  --font-2xl: clamp(1.75rem, 1.52rem + 1.15vw, 2.441rem);
+  --font-3xl: clamp(2.25rem, 1.98rem + 1.34vw, 3.052rem);
+    --weight-med: 400;
+  --weight-semi: 500;
+  --weight-bold: 600;
+}
 .light-mode {
   --primary-color: #2060d8;
   --primary-color2: #3d7aee;
@@ -119,8 +131,11 @@ body {
 }
 header {
   padding-block: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: fixed;
-  height: 74px;
+  height: 80px;
   width: 100%;
   z-index: 1000;
   top: 0;
@@ -142,7 +157,9 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-
+.header-container {
+  width: 100%;
+}
 button {
   font-family: inherit;
   border: none;
@@ -405,6 +422,7 @@ body.light-mode .hero {
   grid-template-columns: 1fr;
 }
 .hero-heading {
+  font-weight: var(--weight-bold);
   font-size: var(--font-3xl);
   display: block;
   text-align: center;
@@ -447,13 +465,35 @@ body.light-mode .hero {
   transition: background-color var(--main-transtion);
 }
 
+.lang-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lang-select-wrapper::before {
+  content: "文/A";
+  color: var(--text2);
+  position: absolute;
+  inset-inline-start: var(--space-sm);
+  font-size: var(--font-xs);
+  pointer-events: none;
+  z-index: 2;
+}
+
 .lang-selector {
+  padding: var(--space-xs) var(--space-md);
+  padding-inline-start: calc(var(--space-sm) + 28px);
+  font-size: var(--font-xs);
+  border-radius: var(--radius-sm);
   background-color: var(--bg4);
   color: var(--text2);
-  padding: var(--space-xs) var(--space-sm);
-  margin-right: var(--space-xs);
-  border: none;
-  font-family: inherit;
+  border: 1px solid var(--border);
+  font-family: var(--font-main);
+}
+
+.lang-selector:hover {
+  border-color: var(--border2);
 }
 .hamburger-btn {
   display: none;
@@ -518,7 +558,6 @@ body.light-mode .hero {
 .mobile-menu-drawer {
   position: absolute;
   top: 0;
-  right: 0;
   width: min(320px, 85vw);
   height: 100%;
   background: var(--bg);
@@ -527,9 +566,21 @@ body.light-mode .hero {
   flex-direction: column;
   gap: var(--space-md);
   overflow-y: auto;
-  transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[dir="ltr"] .mobile-menu-drawer {
+  left: 0;
+  right: auto;
+  transform: translateX(-100%);
   box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+}
+
+html[dir="rtl"] .mobile-menu-drawer {
+  right: 0;
+  left: auto;
+  transform: translateX(100%);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
 }
 
 .mobile-menu.active .mobile-menu-drawer {
@@ -581,6 +632,9 @@ body.light-mode .hero {
   align-items: center;
   gap: var(--space-sm);
 }
+.mobile-header-actions {
+  display: none;
+}
 .mobile-cta {
   width: 100%;
   margin-top: auto;
@@ -588,7 +642,10 @@ body.light-mode .hero {
 body.menu-open {
   overflow: hidden;
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+  .mobile-header-actions {
+    display: flex;
+  }
   .header-links,
   .header-actions {
     display: none;
@@ -609,6 +666,18 @@ body.menu-open {
   }
   .hero-btn {
     padding: var(--space-lg) var(--space-xl);
+  }
+}
+@media (max-width: 1200px) {
+  html[dir="ltr"] .header-links,
+  html[dir="ltr"] .header-actions {
+    display: none;
+  }
+  html[dir="ltr"] .hamburger-btn {
+    display: flex;
+  }
+  html[dir="ltr"] .mobile-header-actions {
+    display: flex;
   }
 }
 @media (max-width: 450px) {
@@ -724,6 +793,8 @@ body.menu-open {
 .section-heading h2 {
   font-size: var(--font-lg);
   color: var(--text);
+  font-weight: var(--weight-semi);
+  text-transform: uppercase;
 }
 .section-heading span {
   flex: 1;

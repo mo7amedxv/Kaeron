@@ -100,13 +100,12 @@ function renderWhyUs(lang) {
   }
 }
 document.getElementById("currentYear").textContent = new Date().getFullYear();
-const MAX_FPS = 240; // reference scale used to size the FPS bar
+const MAX_FPS = 240;
 
 function clamp(v, min, max) {
   return Math.min(max, Math.max(min, v));
 }
 
-// Call this with any subset of fields to update the card.
 function updateBenchmark(data) {
   if (data.gpu) {
     if (data.gpu.score != null) {
@@ -157,9 +156,6 @@ function updateBenchmark(data) {
       clamp((data.futureScore / data.futureTotal) * 100, 0, 100) + "%";
   }
 }
-
-// ---- Demo only: simulates a live feed so you can see it move. ----
-// Delete this block and use the fetch() example below for real data.
 let liveState = {
   gpu: 34811,
   cpu: 41230,
@@ -215,33 +211,24 @@ const translations = {
     "og.title": "elKaeron | منصتك لبناء الحاسوب وتحليل الأداء",
     "og.description":
       "بنِ تجميعتك، افحص التوافق، وتوقّع أداءك — بدقة وبدون تحيّز.",
-
     "brand.sub": "PcBenchPro",
-
     "lang.select": "اختر اللغة",
     "lang.ar": "عربي",
     "lang.en": "EN",
-
     "theme.toggle": "تبديل المظهر",
     "nav.menu": "القائمة",
-
     "nav.builder": "مجمّع الجهاز",
     "nav.bottleneck": "فحص الاختناق",
     "nav.upgradePlan": "خطة الترقية",
     "nav.performanceForecast": "توقع الأداء",
     "nav.futureReady": "جهوزية المستقبل",
     "nav.compare": "مقارنة التجميعات",
-
     "auth.login": "دخول / تسجيل",
-
-    // ─── Hero ───────────────────────────────────────────────
     "hero.title": "كل ما تحتاجه لجهازك في مكانٍ واحد",
     "hero.desc":
       "بنِ تجميعتك، افحص التوافق، وتوقّع الأداء — منصة واحدة متكاملة للمبتدئ والمحترف.",
     "hero.ctaPrimary": "ابدأ تجميعتك",
     "hero.ctaSecondary": "جرّب المساعد الذكي",
-
-    // ─── Bench Widget ────────────────────────────────────────
     "bench.live": "تحليل حي",
     "bench.title": "Live Benchmark",
     "bench.gpuLabel": "GPU",
@@ -252,63 +239,44 @@ const translations = {
     "bench.fpsStatus": "FPS 148",
     "bench.futureLabel": "Future Proof Score",
     "bench.futureStatus": "100 / 87",
-
-    // ─── Stats ───────────────────────────────────────────────
     "stats.plannedFeatures": "ميزة مخططة",
     "stats.databaseParts": "قطعة في الداتابيز",
     "stats.goal": "هدفنا عالمياً",
     "stats.supportedGames": "لعبة مدعومة",
-
-    // ─── Section Titles ──────────────────────────────────────
     "whyus.title": "أين تُخفق المنصات الأخرى؟",
     "features.title": "استكشف المنصة",
-
-    // ─── Features ────────────────────────────────────────────
     "features.builder.title": "ابنِ تجميعتك",
     "features.builder.desc": "اختَر قطعك وشاهد السعر الإجمالي يتحدّث لحظيًا.",
-
     "features.compat.title": "توافق مضمون",
     "features.compat.desc":
       "تحقّق من توافق جميع القطع قبل أن تنفق قرشاً واحداً.",
-
     "features.bottleneck.title": "اكتشف الاختناق",
     "features.bottleneck.desc": "اعرف أيّ قطعة تُعيق أداء جهازك بتحليل دقيق.",
-
     "features.fps.title": "توقّع الأداء مسبقاً",
     "features.fps.desc": "اعرف كم FPS ستحصل عليه في ألعابك المفضلة قبل الشراء.",
-
     "features.futureProof.title": "جاهز للمستقبل؟",
     "features.futureProof.desc":
       "اعرف كم سنةً يصمد جهازك أمام الألعاب والبرامج القادمة.",
-
     "features.upgrade.title": "مسار الترقية",
     "features.upgrade.desc": "طوِّر جهازك بالتدريج بأذكى طريقة وبأقل تكلفة.",
-
     "features.compare.title": "مقارنة التجميعات",
     "features.compare.desc":
       "قارن بين تجميعتين في الأداء والسعر واتخذ قرارك بثقة.",
-
     "features.assistant.title": "المساعد الذكي",
     "features.assistant.desc":
       "اسأل أيّ سؤال عن الهاردوير واحصل على إجابة فورية من مساعد متخصص.",
-
-    // ─── Why Us Cards ────────────────────────────────────────
     "whyus.scattered.number": "١",
     "whyus.scattered.title": "أدوات مبعثرة",
     "whyus.scattered.desc":
       "التوافق في موقع، الأسعار في ثانٍ، والأداء في ثالث. لا منصة واحدة تجمع كل شيء.",
-
     "whyus.beginners.number": "٢",
     "whyus.beginners.title": "معقّدة على المبتدئ",
     "whyus.beginners.desc":
       "معظمها مصممة للمحترفين. أما المبتدئ فيجد نفسه ضائعاً بين المصادر.",
-
     "whyus.database.number": "٣",
     "whyus.database.title": "قطع غائبة عن السوق المحلي",
     "whyus.database.desc":
       "قطع متوفرة في أسواقنا لا تجدها في أي منصة، مما يُعيق البحث والمقارنة.",
-
-    // ─── AI Proof Section ────────────────────────────────────
     "ai-proof.title": "جهازك المثالي يبدأ من هنا",
     "ai-proof.you": "أنت",
     "ai-proof.ai": "elKaeron AI",
@@ -318,8 +286,6 @@ const translations = {
     "ai-proof.msg2": "هل RTX 4070 بدلها هتكون أحسن؟",
     "ai-proof.reply2":
       "RTX 4070 هتدي +12% في Ray Tracing لكنها أغلى بـ4,500 جنيه وهتخرجك من الميزانية. لو الألعاب الحالية هدفك، RX 7700 XT أذكى. لو عندك مرونة في الميزانية، نقدر نبص على خيار تاني.",
-
-    // ─── Footer ──────────────────────────────────────────────
     "footer.desc":
       "منصة متكاملة لبناء وفحص وتطوير أجهزة الحاسوب — بمعايير دقيقة وبيانات حقيقية.",
     "footer.tools": "الأدوات",
@@ -337,33 +303,24 @@ const translations = {
     "og.title": "elKaeron | Build, Analyze & Optimize Your PC",
     "og.description":
       "PC builds, compatibility checks, and real performance analysis — unbiased, for everyone.",
-
     "brand.sub": "PcBenchPro",
-
     "lang.select": "Select language",
     "lang.ar": "عربي",
     "lang.en": "EN",
-
     "theme.toggle": "Toggle theme",
     "nav.menu": "Menu",
-
     "nav.builder": "PC Builder",
     "nav.bottleneck": "Bottleneck Check",
     "nav.upgradePlan": "Upgrade Plan",
     "nav.performanceForecast": "Performance Forecast",
     "nav.futureReady": "Future Ready",
     "nav.compare": "Build Comparison",
-
     "auth.login": "Sign in / Register",
-
-    // ─── Hero ───────────────────────────────────────────────
     "hero.title": "Everything you need for your PC in one place",
     "hero.desc":
       "Build your rig, check compatibility, and forecast performance — one platform for beginners and pros alike.",
     "hero.ctaPrimary": "Start your build",
     "hero.ctaSecondary": "Try the AI assistant",
-
-    // ─── Bench Widget ────────────────────────────────────────
     "bench.live": "Live analysis",
     "bench.title": "Live Benchmark",
     "bench.gpuLabel": "GPU",
@@ -374,51 +331,36 @@ const translations = {
     "bench.fpsStatus": "FPS 148",
     "bench.futureLabel": "Future Proof Score",
     "bench.futureStatus": "100 / 87",
-
-    // ─── Stats ───────────────────────────────────────────────
     "stats.plannedFeatures": "Planned features",
     "stats.databaseParts": "Parts in database",
     "stats.goal": "Our global goal",
     "stats.supportedGames": "Supported games",
-
-    // ─── Section Titles ──────────────────────────────────────
     "whyus.title": "Where Others Fall Short",
     "features.title": "Explore the Platform",
-
-    // ─── Features ────────────────────────────────────────────
     "features.builder.title": "PC Builder",
     "features.builder.desc":
       "Pick your parts and watch the total price update in real time.",
-
     "features.compat.title": "Guaranteed Compatibility",
     "features.compat.desc":
       "Verify every component works together before spending a single dollar.",
-
     "features.bottleneck.title": "Bottleneck Detector",
     "features.bottleneck.desc":
       "Find out exactly which part is holding your system back.",
-
     "features.fps.title": "Performance Forecast",
     "features.fps.desc":
       "Know your expected FPS in your favorite games before you buy.",
-
     "features.futureProof.title": "Future Ready?",
     "features.futureProof.desc":
       "See how many years your build can keep up with upcoming games and software.",
-
     "features.upgrade.title": "Upgrade Path",
     "features.upgrade.desc":
       "Level up your build gradually, smartly, and at minimum cost.",
-
     "features.compare.title": "Build Comparison",
     "features.compare.desc":
       "Compare two builds on performance and price — and decide with confidence.",
-
     "features.assistant.title": "Smart Assistant",
     "features.assistant.desc":
       "Ask any hardware question and get an instant answer from a specialized AI.",
-
-    // ─── Why Us Cards ────────────────────────────────────────
     "whyus.scattered.number": "1",
     "whyus.scattered.title": "Tools are scattered",
     "whyus.scattered.desc":
@@ -433,8 +375,6 @@ const translations = {
     "whyus.database.title": "Local market parts go missing",
     "whyus.database.desc":
       "Parts widely available in local markets aren't listed on most platforms, making search and comparison a dead end.",
-
-    // ─── AI Proof Section ────────────────────────────────────
     "ai-proof.title": "Your build, perfected",
     "ai-proof.you": "You",
     "ai-proof.ai": "elKaeron AI",
@@ -445,8 +385,6 @@ const translations = {
     "ai-proof.msg2": "Would an RTX 4070 be a better choice instead?",
     "ai-proof.reply2":
       "The RTX 4070 gives +12% in Ray Tracing but costs 4,500 EGP more and pushes you over budget. If current games are your target, the RX 7700 XT is the smarter pick. If you have some flexibility, we can explore another option.",
-
-    // ─── Footer ──────────────────────────────────────────────
     "footer.desc":
       "Your all-in-one platform to build, check, and improve PC systems — with real data and zero bias.",
     "footer.tools": "Tools",
@@ -467,8 +405,6 @@ function translatePage(lang) {
 
     if (value) el.textContent = value;
   });
-
-  // aria-label support
   document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
     const key = el.getAttribute("data-i18n-aria-label");
     const value = translations[lang]?.[key];
@@ -486,8 +422,6 @@ langSelectors.forEach((select) => {
     renderFeatures(lang);
     renderWhyUs(lang);
     simulateLiveTick();
-
-    // sync all selects
     langSelectors.forEach((s) => (s.value = lang));
   });
 });
@@ -497,3 +431,58 @@ translatePage(savedLang);
 renderFeatures(savedLang);
 renderWhyUs(savedLang);
 simulateLiveTick();
+(function () {
+  const DURATION = 700;
+
+  function animateEl(el, delay) {
+    setTimeout(() => el.classList.add("is-visible"), delay);
+    setTimeout(() => {
+      el.classList.remove("anim-ready", "is-visible");
+      el.classList.add("anim-seen");
+    }, delay + DURATION);
+  }
+  [
+    [".hero-heading", 0],
+    [".hero-desc", 150],
+    [".hero-btns", 280],
+    [".benchmark-card", 380],
+  ].forEach(([sel, delay]) => {
+    const el = document.querySelector(sel);
+    if (el) animateEl(el, delay);
+  });
+  [
+    [".stats-grid", ".stat"],
+    ["#why-us-container", ".card"],
+    ["#features-container", ".card"],
+    [".chat-demo", ".c-msg"],
+  ].forEach(([contSel, childSel]) => {
+    const container = document.querySelector(contSel);
+    if (container)
+      container
+        .querySelectorAll(childSel)
+        .forEach((el) => el.classList.add("anim-ready"));
+  });
+
+  function observe(container, childSel, stagger) {
+    if (!container) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const targets = childSel
+            ? [...entry.target.querySelectorAll(childSel)]
+            : [entry.target];
+          targets.forEach((el, i) => animateEl(el, i * stagger));
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+    );
+    io.observe(container);
+  }
+
+  observe(document.querySelector(".stats-grid"), ".stat", 80);
+  observe(document.getElementById("why-us-container"), ".card", 100);
+  observe(document.getElementById("features-container"), ".card", 100);
+  observe(document.querySelector(".chat-demo"), ".c-msg", 150);
+})();

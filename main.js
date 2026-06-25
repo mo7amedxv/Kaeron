@@ -32,7 +32,6 @@ menuOverlay.addEventListener("click", () => toggleMenu(false));
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") toggleMenu(false);
 });
-// features
 const featuresData = [
   { icon: '<i class="fa-solid fa-screwdriver-wrench"></i>', key: "builder" },
   { icon: '<i class="fa-solid fa-puzzle-piece"></i>', key: "compat" },
@@ -97,6 +96,42 @@ function renderWhyUs(lang) {
 
   if (focusedIndex !== -1) {
     whyUsContainer.children[focusedIndex]?.focus();
+  }
+}
+const workflowData = [
+  { icon: '<i class="fa-solid fa-sliders"></i>', key: "choose" },
+  { icon: '<i class="fa-solid fa-circle-check"></i>', key: "check" },
+  {
+    icon: '<i class="fa-solid fa-magnifying-glass-chart"></i>',
+    key: "analyze",
+  },
+  { icon: '<i class="fa-solid fa-rocket"></i>', key: "decide" },
+];
+
+const workflowContainer = document.getElementById("workflow-container");
+
+function renderWorkflow(lang) {
+  const t = translations[lang] || translations.ar;
+  const focusedIndex = Array.from(workflowContainer.children).indexOf(
+    document.activeElement,
+  );
+  workflowContainer.innerHTML = "";
+
+  workflowData.forEach((step) => {
+    const card = document.createElement("div");
+    card.className = "card workflow-card";
+    card.setAttribute("tabindex", "0");
+    card.innerHTML = `  
+      <span class="workflow-number">${t[`workflow.${step.key}.number`] ?? ""}</span>
+     ${step.icon}
+    <h3 class="feature-heading card-title">${t[`workflow.${step.key}.title`] ?? ""}</h3>
+    <p class="feature-desc card-desc">${t[`workflow.${step.key}.desc`] ?? ""}</p>
+  `;
+    workflowContainer.appendChild(card);
+  });
+
+  if (focusedIndex !== -1) {
+    workflowContainer.children[focusedIndex]?.focus();
   }
 }
 document.getElementById("currentYear").textContent = new Date().getFullYear();
@@ -286,6 +321,27 @@ const translations = {
     "ai-proof.msg2": "هل RTX 4070 بدلها هتكون أحسن؟",
     "ai-proof.reply2":
       "RTX 4070 هتدي +12% في Ray Tracing لكنها أغلى بـ4,500 جنيه وهتخرجك من الميزانية. لو الألعاب الحالية هدفك، RX 7700 XT أذكى. لو عندك مرونة في الميزانية، نقدر نبص على خيار تاني.",
+    "workflow.title": "كيف تعمل المنصة؟",
+
+    "workflow.choose.number": "١",
+    "workflow.choose.title": "اختر قطعك",
+    "workflow.choose.desc":
+      "تصفّح قاعدة بياناتنا الضخمة واختر القطع التي تناسب ميزانيتك وحاجتك الحقيقية.",
+
+    "workflow.check.number": "٢",
+    "workflow.check.title": "تحقّق من التوافق فورًا",
+    "workflow.check.desc":
+      "نتأكّد تلقائيًا من توافق كل قطعة مع الأخرى، فلا مجال لأي خطأ في التجميعة.",
+
+    "workflow.analyze.number": "٣",
+    "workflow.analyze.title": "شاهد تحليل الأداء",
+    "workflow.analyze.desc":
+      "اعرف نسبة الاختناق المتوقعة، معدل الإطارات في ألعابك، ومدى جهوزية جهازك للمستقبل.",
+
+    "workflow.decide.number": "٤",
+    "workflow.decide.title": "ابنِ بثقة",
+    "workflow.decide.desc":
+      "اتّخذ قرارك النهائي بناءً على بيانات دقيقة وحقيقية، بلا تخمين وبلا تحيّز.",
     "footer.desc":
       "منصة متكاملة لبناء وفحص وتطوير أجهزة الحاسوب — بمعايير دقيقة وبيانات حقيقية.",
     "footer.tools": "الأدوات",
@@ -385,6 +441,27 @@ const translations = {
     "ai-proof.msg2": "Would an RTX 4070 be a better choice instead?",
     "ai-proof.reply2":
       "The RTX 4070 gives +12% in Ray Tracing but costs 4,500 EGP more and pushes you over budget. If current games are your target, the RX 7700 XT is the smarter pick. If you have some flexibility, we can explore another option.",
+    "workflow.title": "How It Works",
+
+    "workflow.choose.number": "1",
+    "workflow.choose.title": "Choose Your Parts",
+    "workflow.choose.desc":
+      "Browse our massive parts database and pick what fits your budget and real needs.",
+
+    "workflow.check.number": "2",
+    "workflow.check.title": "Instant Compatibility Check",
+    "workflow.check.desc":
+      "We automatically verify every part works together — zero room for mistakes.",
+
+    "workflow.analyze.number": "3",
+    "workflow.analyze.title": "See the Performance Analysis",
+    "workflow.analyze.desc":
+      "Know your expected bottleneck, in-game FPS, and how future-ready your build really is.",
+
+    "workflow.decide.number": "4",
+    "workflow.decide.title": "Build With Confidence",
+    "workflow.decide.desc":
+      "Make your final call based on real, accurate data — no guessing, no bias.",
     "footer.desc":
       "Your all-in-one platform to build, check, and improve PC systems — with real data and zero bias.",
     "footer.tools": "Tools",
@@ -421,6 +498,7 @@ langSelectors.forEach((select) => {
     translatePage(lang);
     renderFeatures(lang);
     renderWhyUs(lang);
+    renderWorkflow(lang);
     simulateLiveTick();
     langSelectors.forEach((s) => (s.value = lang));
   });
@@ -430,58 +508,65 @@ langSelectors.forEach((s) => (s.value = savedLang));
 translatePage(savedLang);
 renderFeatures(savedLang);
 renderWhyUs(savedLang);
+renderWorkflow(savedLang);
+
 simulateLiveTick();
 (function () {
   function animateEl(el, delay) {
     setTimeout(() => {
-      el.classList.add('is-visible');
-      el.addEventListener('animationend', function handler() {
-        el.classList.remove('anim-ready', 'is-visible');
-        el.removeEventListener('animationend', handler); 
+      el.classList.add("is-visible");
+      el.addEventListener("animationend", function handler() {
+        el.classList.remove("anim-ready", "is-visible");
+        el.removeEventListener("animationend", handler);
       });
     }, delay);
   }
   [
-    ['.hero-heading',   0  ],
-    ['.hero-desc',      150],
-    ['.hero-btns',      280],
-    ['.benchmark-card', 380],
+    [".hero-heading", 0],
+    [".hero-desc", 150],
+    [".hero-btns", 280],
+    [".benchmark-card", 380],
   ].forEach(([sel, delay]) => {
     const el = document.querySelector(sel);
     if (el) animateEl(el, delay);
   });
 
   [
-    ['.stats-grid',         '.stat' ],
-    ['#why-us-container',   '.card' ],
-    ['#features-container', '.card' ],
-    ['.chat-demo',          '.c-msg'],
+    [".stats-grid", ".stat"],
+    ["#why-us-container", ".card"],
+    ["#features-container", ".card"],
+    ["#workflow-container", ".card"],
+    [".chat-demo", ".c-msg"],
   ].forEach(([contSel, childSel]) => {
     const container = document.querySelector(contSel);
     if (container) {
-      container.querySelectorAll(childSel).forEach(el => el.classList.add('anim-ready'));
+      container
+        .querySelectorAll(childSel)
+        .forEach((el) => el.classList.add("anim-ready"));
     }
   });
 
   function observe(container, childSel, stagger) {
     if (!container) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const targets = childSel
-          ? [...entry.target.querySelectorAll(childSel)]
-          : [entry.target];
-        
-        targets.forEach((el, i) => animateEl(el, i * stagger));
-        io.unobserve(entry.target); 
-      });
-    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const targets = childSel
+            ? [...entry.target.querySelectorAll(childSel)]
+            : [entry.target];
+
+          targets.forEach((el, i) => animateEl(el, i * stagger));
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.05, rootMargin: "0px 0px -20px 0px" },
+    );
     io.observe(container);
   }
-
-  observe(document.querySelector('.stats-grid'),         '.stat',  80 );
-  observe(document.getElementById('why-us-container'),  '.card',  100);
-  observe(document.getElementById('features-container'),'.card',  100);
-  observe(document.querySelector('.chat-demo'),         '.c-msg', 150);
-
+  observe(document.querySelector(".stats-grid"), ".stat", 80);
+  observe(document.getElementById("why-us-container"), ".card", 100);
+  observe(document.getElementById("features-container"), ".card", 100);
+  observe(document.getElementById("workflow-container"), ".card", 100);
+  observe(document.querySelector(".chat-demo"), ".c-msg", 150);
 })();

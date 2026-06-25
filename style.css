@@ -781,7 +781,8 @@ body.menu-open {
   }
 }
 .features-grid,
-.why-us-grid {
+.why-us-grid,
+.workflow-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-md);
@@ -815,14 +816,19 @@ body.menu-open {
   opacity: 0.5;
   border-radius: 999px;
 }
+.card i {
+  color: text;
+}
 .card i,
-.why-us-number {
+.why-us-number,
+.workflow-number {
   font-size: var(--font-sm);
   background-color: var(--bg3);
   border-radius: var(--radius-md);
   padding: var(--space-md);
 }
-.why-us-number {
+.why-us-number,
+.card i {
   width: 45px;
   height: 45px;
   display: flex;
@@ -843,6 +849,24 @@ body.menu-open {
   padding-top: var(--space-2xl);
   padding-bottom: var(--space-xl);
   margin-top: var(--space-3xl);
+}
+.workflow-card {
+  position: relative;
+}
+
+.workflow-number {
+  position: absolute;
+  bottom: 0;
+  inset-inline-end: 0;
+  color: var(--text2);
+  font-weight: var(--weight-med);
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .footer-top {
@@ -999,7 +1023,7 @@ html[dir="ltr"] .bubble.bu {
 }
 .anim-ready.is-visible {
   animation: slideUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
-  will-change: transform, opacity; 
+  will-change: transform, opacity;
 }
 @media (prefers-reduced-motion: reduce) {
   .anim-ready {

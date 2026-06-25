@@ -432,57 +432,56 @@ renderFeatures(savedLang);
 renderWhyUs(savedLang);
 simulateLiveTick();
 (function () {
-  const DURATION = 700;
-
   function animateEl(el, delay) {
-    setTimeout(() => el.classList.add("is-visible"), delay);
     setTimeout(() => {
-      el.classList.remove("anim-ready", "is-visible");
-      el.classList.add("anim-seen");
-    }, delay + DURATION);
+      el.classList.add('is-visible');
+      el.addEventListener('animationend', function handler() {
+        el.classList.remove('anim-ready', 'is-visible');
+        el.removeEventListener('animationend', handler); 
+      });
+    }, delay);
   }
   [
-    [".hero-heading", 0],
-    [".hero-desc", 150],
-    [".hero-btns", 280],
-    [".benchmark-card", 380],
+    ['.hero-heading',   0  ],
+    ['.hero-desc',      150],
+    ['.hero-btns',      280],
+    ['.benchmark-card', 380],
   ].forEach(([sel, delay]) => {
     const el = document.querySelector(sel);
     if (el) animateEl(el, delay);
   });
+
   [
-    [".stats-grid", ".stat"],
-    ["#why-us-container", ".card"],
-    ["#features-container", ".card"],
-    [".chat-demo", ".c-msg"],
+    ['.stats-grid',         '.stat' ],
+    ['#why-us-container',   '.card' ],
+    ['#features-container', '.card' ],
+    ['.chat-demo',          '.c-msg'],
   ].forEach(([contSel, childSel]) => {
     const container = document.querySelector(contSel);
-    if (container)
-      container
-        .querySelectorAll(childSel)
-        .forEach((el) => el.classList.add("anim-ready"));
+    if (container) {
+      container.querySelectorAll(childSel).forEach(el => el.classList.add('anim-ready'));
+    }
   });
 
   function observe(container, childSel, stagger) {
     if (!container) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const targets = childSel
-            ? [...entry.target.querySelectorAll(childSel)]
-            : [entry.target];
-          targets.forEach((el, i) => animateEl(el, i * stagger));
-          io.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
-    );
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const targets = childSel
+          ? [...entry.target.querySelectorAll(childSel)]
+          : [entry.target];
+        
+        targets.forEach((el, i) => animateEl(el, i * stagger));
+        io.unobserve(entry.target); 
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     io.observe(container);
   }
 
-  observe(document.querySelector(".stats-grid"), ".stat", 80);
-  observe(document.getElementById("why-us-container"), ".card", 100);
-  observe(document.getElementById("features-container"), ".card", 100);
-  observe(document.querySelector(".chat-demo"), ".c-msg", 150);
+  observe(document.querySelector('.stats-grid'),         '.stat',  80 );
+  observe(document.getElementById('why-us-container'),  '.card',  100);
+  observe(document.getElementById('features-container'),'.card',  100);
+  observe(document.querySelector('.chat-demo'),         '.c-msg', 150);
+
 })();

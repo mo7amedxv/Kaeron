@@ -993,7 +993,13 @@ html[dir="ltr"] .bubble.bu {
     transform: translateY(0);
   }
 }
-
+.anim-ready {
+  opacity: 0;
+}
+.anim-ready.is-visible {
+  animation: slideUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity; 
+}
 @media (prefers-reduced-motion: reduce) {
   .anim-ready {
     opacity: 1 !important;
@@ -1001,15 +1007,4 @@ html[dir="ltr"] .bubble.bu {
   .anim-ready.is-visible {
     animation: none !important;
   }
-}
-
-.anim-ready {
-  opacity: 0;
-  will-change: transform, opacity;
-}
-.anim-ready.is-visible {
-  animation: slideUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.anim-seen {
-  opacity: 1;
 }

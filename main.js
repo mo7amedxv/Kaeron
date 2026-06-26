@@ -56,10 +56,10 @@ function renderFeatures(lang) {
     card.className = "feature-card card";
     card.setAttribute("tabindex", "0");
     card.innerHTML = `
-      <div class="feature-icon card-icon">${feature.icon}</div>
-      <h3 class="feature-heading card-title">${t[`features.${feature.key}.title`] ?? ""}</h3>
-      <p class="feature-desc card-desc">${t[`features.${feature.key}.desc`] ?? ""}</p>
-    `;
+        <div class="feature-icon card-icon">${feature.icon}</div>
+        <h3 class="feature-heading card-title">${t[`features.${feature.key}.title`] ?? ""}</h3>
+        <p class="feature-desc card-desc">${t[`features.${feature.key}.desc`] ?? ""}</p>
+      `;
     featuresContainer.appendChild(card);
   });
 
@@ -87,10 +87,10 @@ function renderWhyUs(lang) {
     card.className = "card why-us-card";
     card.setAttribute("tabindex", "0");
     card.innerHTML = `
-      <div class="card-icon why-us-number">${t[`whyus.${item.key}.number`] ?? ""}</div>
-      <h3 class="card-title why-us-title">${t[`whyus.${item.key}.title`] ?? ""}</h3>
-      <p class="card-desc why-us-desc">${t[`whyus.${item.key}.desc`] ?? ""}</p>
-    `;
+        <div class="card-icon why-us-number">${t[`whyus.${item.key}.number`] ?? ""}</div>
+        <h3 class="card-title why-us-title">${t[`whyus.${item.key}.title`] ?? ""}</h3>
+        <p class="card-desc why-us-desc">${t[`whyus.${item.key}.desc`] ?? ""}</p>
+      `;
     whyUsContainer.appendChild(card);
   });
 
@@ -122,11 +122,11 @@ function renderWorkflow(lang) {
     card.className = "card workflow-card";
     card.setAttribute("tabindex", "0");
     card.innerHTML = `  
-      <span class="workflow-number">${t[`workflow.${step.key}.number`] ?? ""}</span>
-     ${step.icon}
-    <h3 class="feature-heading card-title">${t[`workflow.${step.key}.title`] ?? ""}</h3>
-    <p class="feature-desc card-desc">${t[`workflow.${step.key}.desc`] ?? ""}</p>
-  `;
+        <span class="workflow-number">${t[`workflow.${step.key}.number`] ?? ""}</span>
+      ${step.icon}
+      <h3 class="feature-heading card-title">${t[`workflow.${step.key}.title`] ?? ""}</h3>
+      <p class="feature-desc card-desc">${t[`workflow.${step.key}.desc`] ?? ""}</p>
+    `;
     workflowContainer.appendChild(card);
   });
 
@@ -276,6 +276,7 @@ const translations = {
     "bench.futureStatus": "100 / 87",
     "stats.plannedFeatures": "ميزة مخططة",
     "stats.databaseParts": "قطعة في الداتابيز",
+    "stats.goal.num": "#١",
     "stats.goal": "هدفنا عالمياً",
     "stats.supportedGames": "لعبة مدعومة",
     "whyus.title": "أين تُخفق المنصات الأخرى؟",
@@ -389,6 +390,7 @@ const translations = {
     "bench.futureStatus": "100 / 87",
     "stats.plannedFeatures": "Planned features",
     "stats.databaseParts": "Parts in database",
+        "stats.goal.num": "#1",
     "stats.goal": "Our global goal",
     "stats.supportedGames": "Supported games",
     "whyus.title": "Where Others Fall Short",
@@ -494,16 +496,21 @@ const langSelectors = document.querySelectorAll(".lang-selector");
 langSelectors.forEach((select) => {
   select.addEventListener("change", (e) => {
     const lang = e.target.value;
+
     localStorage.setItem("lang", lang);
+
     translatePage(lang);
     renderFeatures(lang);
     renderWhyUs(lang);
     renderWorkflow(lang);
+
+    updateCountersLocale();
+
     simulateLiveTick();
+
     langSelectors.forEach((s) => (s.value = lang));
   });
 });
-
 langSelectors.forEach((s) => (s.value = savedLang));
 translatePage(savedLang);
 renderFeatures(savedLang);
@@ -570,3 +577,47 @@ simulateLiveTick();
   observe(document.getElementById("workflow-container"), ".card", 100);
   observe(document.querySelector(".chat-demo"), ".c-msg", 150);
 })();
+function updateCountersLocale() {
+  const locale = document.documentElement.dir === "rtl" ? "ar-EG" : "en-US";
+
+  document.querySelectorAll("[data-count]").forEach((el) => {
+    const target = parseInt(el.dataset.count, 10);
+    el.textContent = target.toLocaleString(locale);
+  });
+}
+
+const countUp = (el, target, duration = 1400) => {
+  const start = performance.now();
+
+  const tick = (now) => {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+
+    const locale = document.documentElement.dir === "rtl" ? "ar-EG" : "en-US";
+
+    el.textContent = Math.round(eased * target).toLocaleString(locale);
+
+    if (p < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = target.toLocaleString(locale);
+    }
+  };
+
+  requestAnimationFrame(tick);
+};
+
+const obs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+
+      countUp(e.target, parseInt(e.target.dataset.count, 10));
+
+      obs.unobserve(e.target);
+    });
+  },
+  { threshold: 0.5 },
+);
+
+document.querySelectorAll("[data-count]").forEach((el) => obs.observe(el));

@@ -339,7 +339,7 @@ body.light-mode .theme-btn .icon-light {
 
 /* metrics */
 .metric {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 .metric:last-child {
   margin-bottom: 0;
@@ -411,7 +411,7 @@ body.light-mode .theme-btn .icon-light {
   background-color: var(--bg2);
   inset: 0;
   border-bottom: 1px solid var(--bg3);
-  padding-top: 100px;
+  padding-top: 150px;
   margin-bottom: var(--space-lg);
 }
 

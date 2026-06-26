@@ -390,7 +390,7 @@ const translations = {
     "bench.futureStatus": "100 / 87",
     "stats.plannedFeatures": "Planned features",
     "stats.databaseParts": "Parts in database",
-        "stats.goal.num": "#1",
+    "stats.goal.num": "#1",
     "stats.goal": "Our global goal",
     "stats.supportedGames": "Supported games",
     "whyus.title": "Where Others Fall Short",

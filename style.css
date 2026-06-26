@@ -188,8 +188,8 @@ select {
 .logo-img {
   filter: invert(99%) sepia(49%) saturate(11%) hue-rotate(218deg)
     brightness(111%) contrast(90%);
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
 }
 .light-mode .logo-img {
   filter: invert(2%) sepia(1%) saturate(1170%) hue-rotate(314deg)
@@ -200,7 +200,14 @@ select {
   text-align: center;
   transition: color var(--main-transtion);
 }
-
+footer .logo-name{
+  margin-left: var(--space-sm);
+  font-size: var(--font-md);
+  color: var(--text);
+}
+html[dir="rtl"] footer .logo{
+  direction: ltr;
+}
 .header-link:not(.logo) {
   padding: var(--space-sm);
 }

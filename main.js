@@ -777,3 +777,12 @@ const obs = new IntersectionObserver(
 );
 
 document.querySelectorAll("[data-count]").forEach((el) => obs.observe(el));
+document.querySelectorAll(".faq-card").forEach((detail) => {
+  detail.addEventListener("toggle", () => {
+    if (detail.open) {
+      document.querySelectorAll(".faq-card").forEach((other) => {
+        if (other !== detail) other.open = false;
+      });
+    }
+  });
+});

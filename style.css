@@ -1102,5 +1102,18 @@ html[dir="ltr"] .faq-q::after {
 @media (max-width: 600px) {
   .faq-q {
     font-size: var(--font-sm);
+    display: flex;
+    align-items: center;
+  }
+  .faq-q::after {
+    content: "+";
+    position: static;
+    color: var(--text2);
+    font-size: var(--font-md);
+    transition: transform var(--main-transtion);
+    padding: var(--space-md);
+  }
+  .faq-card[open] .faq-q::after {
+    transform: rotate(45deg);
   }
 }

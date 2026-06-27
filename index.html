@@ -48,26 +48,82 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-icon-180x180.png"
+    />
 
-<link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icons/favicon-16x16.png"
+    />
 
-<link rel="manifest" href="icons/manifest.json">
+    <link rel="manifest" href="icons/manifest.json" />
 
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=language"
@@ -548,13 +604,112 @@
         <div id="workflow-container" class="workflow-grid"></div>
       </div>
     </section>
+    <section class="faq">
+      <div class="container">
+        <div class="section-heading">
+          <span></span>
+          <h2 data-i18n="faq.title">أسئلة شائعة</h2>
+          <span></span>
+        </div>
+
+        <ul class="faq-grid">
+          <details class="faq-card">
+            <summary class="faq-q" data-i18n="faq.fps.q">
+              هل الموقع يتوقع أداء جهازي داخل ألعاب معينة؟
+            </summary>
+            <div class="content faq-ans" data-i18n="faq.fps.a">
+              نعم، يقدم elKaeron تقديرًا تقريبيًا لعدد الإطارات (FPS) المتوقعة
+              في أشهر الألعاب (مثل Cyberpunk, Valorant, GTA V) بناءً على الكرت
+              والمعالج المختارين ودقة الشاشة (1080p, 2K, 4K).
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary class="faq-q" data-i18n="faq.cpuGpu.q">
+              أيهما أفضل لاستخدامي: ميزان القوى لصالح المعالج (CPU) أم كرت
+              الشاشة (GPU)؟
+            </summary>
+            <div class="content faq-ans" data-i18n="faq.cpuGpu.a">
+              يعتمد ذلك على استخدامك؛ إذا كان هدفك الأساسي هو الألعاب، فالأولوية
+              لكرت الشاشة. أما إذا كان عملك يتركز على المونتاج، البرمجة، والـ
+              Rendering، فإن قوة المعالج هي الأهم.
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary class="faq-q" data-i18n="faq.compat.q">
+              كيف أضمن توافق القطع (Compatibility) عند بناء تجميعة جديدة?
+            </summary>
+            <div class="content faq-ans" data-i18n="faq.compat.a">
+              يقوم نظام elKaeron بفحص تلقائي للمقابس (Sockets)، أنواع الرامات
+              (DDR4/DDR5)، والمنافذ للتأكد من أن جميع القطع التي تختارها متوافقة
+              تماماً مع اللوحة الأم ومزود الطاقة بدون أي تعارض.
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary class="faq-q" data-i18n="faq.prices.q">
+              هل أسعار القطع المعروضة في الموقع محدثة؟
+            </summary>
+            <div class="content faq-ans" data-i18n="faq.prices.a">
+              نعم، نحاول تحديث أسعار السوق بشكل دوري بناءً على متوسط الأسعار في
+              المتاجر المحلية والعالمية، ولكن قد تحدث تغييرات طفيفة حسب العرض
+              والطلب.
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary class="faq-q" data-i18n="faq.laptop.q">
+              هل يدعم الموقع مقارنة كروت الشاشة والمعالجات الخاصة باللاب توب؟
+            </summary>
+            <div class="content faq-ans" data-i18n="faq.laptop.a">
+              حالياً المنصة تركز بشكل كامل على قطع أجهزة الكمبيوتر المكتبية
+              (Desktop) لضمان دقة البيانات، وجاري العمل على إضافة نسخ اللاب توب
+              في التحديثات القادمة.
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary class="faq-q" data-i18n="faq.ai.q">
+              كيف تساهم أدوات الذكاء الاصطناعي في موقع elKaeron؟
+            </summary>
+            <div class="content faq-ans" data-i18n="faq.ai.a">
+              يساعدك المساعد الذكي في اقتراح أفضل تجميعة ممكنة بناءً على
+              ميزانيتك المحددة واستخدامك (ألعاب، مونتاج، برمجة) مع تحقيق أفضل
+              قيمة مقابل سعر.
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary class="faq-q" data-i18n="faq.bottleneckCalc.q">
+              كيف يقوم الموقع بحساب نسبة الاختناق (Bottleneck)؟
+            </summary>
+            <div class="content faq-ans" data-i18n="faq.bottleneckCalc.a">
+              نعتمد على خوارزميات متطورة تقارن قوة المعالجة (CPU) وقوة الرسوميات
+              (GPU) بناءً على اختبارات الأداء الواقعية (Benchmarks) في الألعاب
+              وبرامج الرندر، لتحديد ما إذا كانت إحدى القطع تحد من أداء الأخرى.
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary class="faq-q" data-i18n="faq.bottleneckMeaning.q">
+              هل نسبة الاختناق الظاهرة تعني أن جهازي لن يعمل؟
+            </summary>
+            <div class="content faq-ans" data-i18n="faq.bottleneckMeaning.a">
+              لا بالطبع. الاختناق يعني فقط أنك لن تحصل على 100% من أداء القطعة
+              الأقوى، لكن الجهاز سيعمل بشكل طبيعي تماماً.
+            </div>
+          </details>
+        </ul>
+      </div>
+    </section>
     <footer class="site-footer">
       <div class="container">
         <div class="footer-container">
           <div class="footer-top">
             <div class="footer-brand">
               <a href="#" class="logo">
-                <img src="imgs/logo.svg" class="logo-img" alt="logo">
+                <img src="imgs/logo.svg" class="logo-img" alt="logo" />
                 <p class="logo-name">elKaeron</p>
               </a>
               <p class="footer-desc" data-i18n="footer.desc">

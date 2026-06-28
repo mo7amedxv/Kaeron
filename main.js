@@ -246,7 +246,6 @@ const translations = {
     "og.title": "elKaeron | منصتك لتجميع الكمبيوتر وتحليل الأداء",
     "og.description":
       "اصنع تجميعتك، تحقّق من التوافق، وتوقّع أداءك — بدقة وبلا تحيّز.",
-    "brand.sub": "PcBenchPro",
     "lang.select": "اختر اللغة",
     "lang.ar": "العربية",
     "lang.en": "EN",
@@ -352,7 +351,7 @@ const translations = {
     "footer.support": "الدعم الفني",
     "footer.privacy": "سياسة الخصوصية",
     "footer.terms": "الشروط والأحكام",
-    "footer.copy": "© elKaeron PcBenchPro. جميع الحقوق محفوظة.",
+    "footer.copy": "© elKaeron. جميع الحقوق محفوظة.",
     "faq.title": "أسئلة شائعة",
 
     "faq.fps.q": "هل يستطيع الموقع توقّع أداء جهازي في ألعاب معينة؟",
@@ -398,7 +397,6 @@ const translations = {
     "og.title": "elKaeron | Build, Analyze & Optimize Your PC",
     "og.description":
       "PC builds, compatibility checks, and real performance analysis — unbiased, for everyone.",
-    "brand.sub": "PcBenchPro",
     "lang.select": "Select language",
     "lang.ar": "عربي",
     "lang.en": "EN",
@@ -546,7 +544,7 @@ const translations = {
     "footer.support": "Support",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms and Conditions",
-    "footer.copy": "© elKaeron PcBenchPro. All rights reserved.",
+    "footer.copy": "© elKaeron. All rights reserved.",
   },
 };
 

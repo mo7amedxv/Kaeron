@@ -107,7 +107,8 @@ const workflowData = [
   },
   { icon: '<i class="fa-solid fa-rocket"></i>', key: "decide" },
 ];
-
+const currentYear = new Date().getFullYear();
+document.getElementById("currentYear").textContent = currentYear;
 const workflowContainer = document.getElementById("workflow-container");
 
 function renderWorkflow(lang) {
@@ -351,7 +352,9 @@ const translations = {
     "footer.support": "الدعم الفني",
     "footer.privacy": "سياسة الخصوصية",
     "footer.terms": "الشروط والأحكام",
-    "footer.copy": "© elKaeron. جميع الحقوق محفوظة.",
+    "footer.copy": `${currentYear.toLocaleString("ar-EG", {
+      useGrouping: false,
+    })}© elKaeron. جميع الحقوق محفوظة.`,
     "faq.title": "أسئلة شائعة",
 
     "faq.fps.q": "هل يستطيع الموقع توقّع أداء جهازي في ألعاب معينة؟",
@@ -405,6 +408,8 @@ const translations = {
     "nav.builder": "PC Builder",
     "nav.bottleneck": "Bottleneck Check",
     "faq.title": "FAQ's",
+
+    "footer.copy": `© ${currentYear} elKaeron. All rights reserved.`,
 
     "faq.fps.q":
       "Does the site predict my system's performance in specific games?",
@@ -544,7 +549,6 @@ const translations = {
     "footer.support": "Support",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms and Conditions",
-    "footer.copy": "© elKaeron. All rights reserved.",
   },
 };
 

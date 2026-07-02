@@ -815,6 +815,9 @@ body.menu-open {
     background-color: var(--primary-color);
   }
 }
+.btn-primary i {
+  color: inherit;
+}
 .features-grid,
 .why-us-grid,
 .workflow-grid {
@@ -1244,7 +1247,12 @@ html[dir="ltr"] .bubble.bu {
   font-family: var(--font-main);
   border-radius: var(--radius-full);
 }
-
+html[dir="rtl"] .fab:after {
+  content: "تواصل مع الذكاء الاصطناعي";
+  top: 0;
+  left: 100%;
+  width: 180px;
+}
 .ai-chat {
   position: fixed;
   min-width: 300px;

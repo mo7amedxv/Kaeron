@@ -786,14 +786,14 @@ const obs = new IntersectionObserver(
   (entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
-
       countUp(e.target, parseInt(e.target.dataset.count, 10));
-
       obs.unobserve(e.target);
     });
   },
-  { threshold: 0.5 },
+  { threshold: 0.5 }, 
 );
+
+document.querySelectorAll("[data-count]").forEach((el) => obs.observe(el));
 
 const cards = document.querySelectorAll(".faq-card");
 

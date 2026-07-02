@@ -757,6 +757,13 @@ body.menu-open {
 }
 
 @media (hover: hover) {
+  .faq-q:hover {
+    cursor: pointer;
+  }
+  .fab:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
   .card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-sm);
@@ -803,6 +810,9 @@ body.menu-open {
   }
   html[dir="ltr"] .btn-primary:hover i {
     transform: translateX(5px);
+  }
+  .fab:hover {
+    background-color: var(--primary-color);
   }
 }
 .features-grid,
@@ -1086,10 +1096,6 @@ html[dir="ltr"] .bubble.bu {
   content: "";
 }
 
-.faq-q:hover {
-  cursor: pointer;
-}
-
 .faq-q:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
@@ -1218,11 +1224,9 @@ html[dir="ltr"] .bubble.bu {
     opacity var(--main-transtion),
     visibility var(--main-transtion),
     background-color var(--main-transtion);
-  background-color: var(--bg6);
+  background-color: var(--accent);
 }
-.fab:hover {
-  background-color: var(--primary-color);
-}
+
 .fab:after {
   content: "Chat With AI";
   position: absolute;
@@ -1240,10 +1244,7 @@ html[dir="ltr"] .bubble.bu {
   font-family: var(--font-main);
   border-radius: var(--radius-full);
 }
-.fab:hover::after {
-  opacity: 1;
-  visibility: visible;
-}
+
 .ai-chat {
   position: fixed;
   min-width: 300px;

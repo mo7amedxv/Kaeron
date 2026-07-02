@@ -582,10 +582,10 @@ const translations = {
 })();
 
 /**
- * يقسّم نص العنصر إلى كلمات ويحرّك كل كلمة على حدة.
- * @param {HTMLElement} el        - العنصر المستهدف
- * @param {number}      baseDelay - التأخير الأساسي قبل بدء الأنيميشن (ms)
- * @param {number}      stagger   - الفارق الزمني بين كل كلمة والتي تليها (ms)
+
+  @param {HTMLElement} el        
+  @param {number}      baseDelay 
+  @param {number}      stagger   
  */
 function animateWords(el, baseDelay = 0, stagger = 55) {
   if (!el) return;
@@ -778,13 +778,22 @@ const obs = new IntersectionObserver(
   { threshold: 0.5 },
 );
 
-document.querySelectorAll("[data-count]").forEach((el) => obs.observe(el));
-document.querySelectorAll(".faq-card").forEach((detail) => {
-  detail.addEventListener("toggle", () => {
-    if (detail.open) {
-      document.querySelectorAll(".faq-card").forEach((other) => {
-        if (other !== detail) other.open = false;
-      });
+const cards = document.querySelectorAll(".faq-card");
+
+cards.forEach((card) => {
+  const summary = card.querySelector(".faq-q");
+  summary.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isOpen = card.getAttribute("data-open") === "true";
+
+    cards.forEach((other) => {
+      other.setAttribute("data-open", "false");
+      other.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+    });
+
+    if (!isOpen) {
+      card.setAttribute("data-open", "true");
+      summary.setAttribute("aria-expanded", "true");
     }
   });
 });

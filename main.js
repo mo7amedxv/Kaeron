@@ -391,6 +391,9 @@ const translations = {
       "هل نسبة الاختناق الظاهرة تعني أن جهازي لن يعمل؟",
     "faq.bottleneckMeaning.a":
       "لا، بالطبع لا. الاختناق يعني فقط أنك لن تحصل على 100% من أداء القطعة الأقوى، لكن الجهاز سيعمل بشكل طبيعي تمامًا.",
+    "chat.title": "مساعد Elkaeron الذكي",
+    "chat.description":
+      "اسألني عن أي شيء يخص المنصة، أو التجميعات، أو المهارات، أو الخبرة.",
   },
 
   en: {
@@ -549,6 +552,9 @@ const translations = {
     "footer.support": "Support",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms and Conditions",
+    "chat.title": "Elkaeron AI Assistant",
+    "chat.description":
+      "Ask me anything about the portfolio, projects, skills, or experience.",
   },
 };
 
@@ -790,7 +796,7 @@ const obs = new IntersectionObserver(
       obs.unobserve(e.target);
     });
   },
-  { threshold: 0.5 }, 
+  { threshold: 0.5 },
 );
 
 document.querySelectorAll("[data-count]").forEach((el) => obs.observe(el));
@@ -814,3 +820,32 @@ cards.forEach((card) => {
     }
   });
 });
+const closeBtn = document.getElementById("ai-close-btn");
+const chat = document.getElementById("chat");
+const fab = document.getElementById("fab");
+const chatBody = document.getElementById("chat-body");
+const messages = document.querySelector(".messages");
+closeBtn.addEventListener("click", () => {
+  chat.classList.toggle("active");
+});
+fab.addEventListener("click", () => {
+  chat.classList.toggle("active");
+});
+if (messages.children === true) {
+  chatBody.style.display = "none";
+} else {
+  messages.style.display = "none";
+}
+const hero = document.querySelector(".hero");
+
+const observer = new IntersectionObserver((entries) => {
+  const entry = entries[0];
+  if (entry.isIntersecting) {
+    fab.style.visibility = "hidden";
+    fab.style.opacity = 0;
+  } else {
+    fab.style.visibility = "visible";
+    fab.style.opacity = 1;
+  }
+});
+observer.observe(hero);

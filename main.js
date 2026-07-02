@@ -609,21 +609,38 @@ function animateWords(el, baseDelay = 0, stagger = 55) {
 }
 
 function translatePage(lang) {
+  // 1. تغيير لغة واتجاه الصفحة
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 
+  // 2. ترجمة النصوص
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.dataset.i18n;
     const value = translations[lang]?.[key];
-
     if (value) el.textContent = value;
   });
+
+  // 3. ترجمة الـ aria-label
   document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
     const key = el.getAttribute("data-i18n-aria-label");
     const value = translations[lang]?.[key];
-
     if (value) el.setAttribute("aria-label", value);
   });
+
+  // 4. تحديث اتجاه الأيقونات مباشرة
+  const currentDir = document.documentElement.dir;
+  const leftIcons = document.querySelectorAll(".fa-arrow-left");
+  const rightIcons = document.querySelectorAll(".fa-arrow-right");
+
+  if (currentDir === "ltr") {
+    leftIcons.forEach((icon) => {
+      icon.classList.replace("fa-arrow-left", "fa-arrow-right");
+    });
+  } else {
+    rightIcons.forEach((icon) => {
+      icon.classList.replace("fa-arrow-right", "fa-arrow-left");
+    });
+  }
 }
 const langSelectors = document.querySelectorAll(".lang-selector");
 

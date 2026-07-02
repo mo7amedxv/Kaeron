@@ -795,6 +795,9 @@ body.menu-open {
   .faq-q:hover {
     cursor: pointer;
   }
+  html[dir="ltr"] .btn-primary:hover i {
+    transform: translateX(5px);
+  }
 }
 .features-grid,
 .why-us-grid,
